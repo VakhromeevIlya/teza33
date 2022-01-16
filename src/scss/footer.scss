@@ -1,0 +1,135 @@
+//====================================================================================================
+.footer {
+	@include adaptiveValue("padding-top", 60, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 210, 30, $containerWidth, $minWidth, 1);
+	background-color: #fff;
+	position: relative;
+	z-index: 4;
+	&__row {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 110, 20, $containerWidth, 768, 1);
+	}
+}
+.up-footer {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: rem(20);
+	@media (max-width: $tablet) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width: $mobileSmall) {
+		grid-template-columns: 1fr;
+	}
+
+	&__logo {
+		display: block;
+		@include adaptiveValue("margin-bottom", 60, 20, $containerWidth, $minWidth, 1);
+	}
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(15);
+	}
+	&__item {
+		display: flex;
+		column-gap: rem(20);
+		row-gap: rem(10);
+		span {
+			align-self: center;
+		}
+		&::before {
+			color: $bgButtonOrange;
+			width: rem(40);
+			height: rem(40);
+			border-radius: 50%;
+			border: rem(1) solid $bgButtonOrange;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+		}
+	}
+	&__mails {
+		display: flex;
+		flex-direction: column;
+		a {
+			text-decoration-line: underline;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	&__mail {
+		font-size: rem(18);
+		line-height: 137.6%;
+		color: $footerMail;
+	}
+
+	&__title {
+		color: $footerSpollerTitle;
+		font-weight: 800;
+		font-size: rem(18);
+		line-height: 103.1%;
+		margin-bottom: rem(20);
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: rem(10);
+		&::after {
+			content: "\e901";
+			@extend %ic;
+			display: none;
+			transform: rotate(-90deg);
+			transition: transform 0.3s ease 0s;
+		}
+		@media (max-width: $mobileSmall) {
+			margin-bottom: rem(5);
+			font-size: rem(24);
+			width: 100%;
+			&._spoller-active::after {
+				transform: rotate(0deg);
+			}
+			&::after {
+				display: block;
+			}
+		}
+	}
+
+	&__link {
+		color: $footerLink;
+		font-size: rem(15);
+		line-height: 192.6%;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.down-footer {
+	display: flex;
+	gap: rem(10);
+	align-items: center;
+	flex-wrap: wrap;
+	&__copyrights {
+		flex: 1 1 auto;
+		font-size: rem(13);
+		line-height: 157.6%;
+		color: $footerLink;
+	}
+
+	&__done {
+		font-size: rem(13);
+		line-height: 157.6%;
+		color: $footerLink;
+		span {
+			color: $bgButtonOrange;
+		}
+	}
+}
+
+//====================================================================================================

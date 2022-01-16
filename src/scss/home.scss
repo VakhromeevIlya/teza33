@@ -1,0 +1,398 @@
+//====================================================================================================
+.callback-form {
+	background: $bgButtonOrange;
+	@include adaptiveValue("padding-top", 55, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 55, 30, $containerWidth, $minWidth, 1);
+	position: relative;
+	z-index: 4;
+	.form__error {
+		color: black;
+		margin: rem(5) 0;
+		padding-left: rem(25);
+	}
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		@include adaptiveValue("column-gap", 90, 20, $containerWidth, 992, 1);
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+			row-gap: rem(20);
+		}
+	}
+
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 35, 28, $containerWidth, $minWidth, 1);
+		line-height: 118.1%;
+		color: white;
+		margin-bottom: em(14, 35);
+	}
+	&__input {
+		flex: 1 1 auto;
+	}
+	&__subtitle {
+		font-size: rem(14);
+		line-height: 157.6%;
+		color: rgba(255, 255, 255, 0.8);
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__form {
+		width: 100%;
+		@media (max-width: $mobileSmall) {
+			button {
+				width: 100%;
+			}
+		}
+	}
+}
+//====================================================================================================
+//========================================================================================================================================================
+.fullscreen {
+	position: relative;
+	&__image-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__body {
+		position: relative;
+		z-index: 3;
+		max-width: rem(600);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@include adaptiveValue("padding-top", 190, 150, $containerWidth, 992, 1);
+		@include adaptiveValue("padding-bottom", 190, 150, $containerWidth, 992, 1);
+		@media (max-width: $mobile) {
+			padding: rem(70) 0;
+		}
+	}
+
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 60, 30, $containerWidth, $minWidth, 1);
+		line-height: math.div(62, 60);
+		color: $fullscreenTitle;
+		&:not(:last-child) {
+			margin-bottom: em(40, 60);
+		}
+	}
+
+	&__subtitle {
+		font-size: rem(20);
+		line-height: 157.6%;
+		color: $fullscreenSubtitle;
+		@include adaptiveValue("margin-bottom", 50, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__button {
+		align-self: start;
+	}
+}
+//========================================================================================================================================================
+.advantages {
+	background: url("@img/main/dots.svg") 0 0;
+	@include adaptiveValue("padding-top", 85, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 85, 0, $containerWidth, 480, 1);
+
+	&__up {
+		display: flex;
+		align-items: center;
+		gap: rem(20);
+		@media (max-width: $mobile) {
+			flex-wrap: wrap;
+		}
+		@include adaptiveValue("margin-bottom", 68, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 48, 26, $containerWidth, $minWidth, 1);
+		line-height: 120.6%;
+		flex: 0 1 50%;
+		@media (max-width: $mobile) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__certificated {
+		display: flex;
+		align-items: center;
+		column-gap: rem(20);
+		justify-content: flex-end;
+		flex: 0 1 50%;
+		@media (max-width: $mobile) {
+			flex: 1 1 100%;
+			justify-content: stretch;
+		}
+		a {
+			text-decoration-line: underline;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	&__image-ibg {
+		width: rem(86);
+		flex: 0 0 rem(86);
+		height: rem(86);
+	}
+
+	&__link {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 18, 16, $containerWidth, $minWidth, 1);
+		line-height: 130.6%;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+	}
+}
+.grid-advantages {
+	@media (max-width: $mobileSmall) {
+		margin: 0 rem(-15);
+	}
+	&__item {
+		min-height: rem(200);
+		overflow: hidden;
+		background-color: $advantagesItemGrey;
+		@include adaptiveValue("padding-top", 40, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-bottom", 40, 15, $containerWidth, $minWidth, 1);
+		position: relative;
+		&_red {
+			background-color: $advantagesItemRed;
+			.grid-advantages__number {
+				color: $advantagesNumberRed;
+			}
+			.grid-advantages__text {
+				color: white;
+			}
+		}
+	}
+
+	&__number {
+		color: $advantagesNumber;
+		font-weight: 800;
+		@include adaptiveValue("font-size", 128, 70, $containerWidth, $minWidth, 1);
+		line-height: 122.6%;
+		@media (min-width: em(630)) {
+			transform: translateX(-7%);
+		}
+		&:not(:last-child) {
+			margin-bottom: em(23, 128);
+		}
+	}
+
+	&__text {
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: 130%;
+		@include adaptiveValue("padding-left", 40, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-right", 40, 15, $containerWidth, $minWidth, 1);
+	}
+
+	&__image-ibg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
+//========================================================================================================================================================
+.types {
+	@include adaptiveValue("padding-top", 100, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 100, 30, $containerWidth, $minWidth, 1);
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: em(23, 40);
+		}
+	}
+
+	&__subtitle {
+		font-size: rem(20);
+		line-height: 157.6%;
+		color: $footerLink;
+		@include adaptiveValue("margin-bottom", 73, 20, $containerWidth, $minWidth, 1);
+	}
+}
+.cards-types {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+	gap: rem(30);
+	@media (max-width: $mobile) {
+		gap: rem(15);
+	}
+	&__card {
+		background: $greyInput;
+		@include adaptiveValue("padding", 40, 15, $containerWidth, $minWidth, 1);
+		border-radius: rem(18);
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__image-ibg {
+		flex: 0 0 rem(80);
+		width: rem(80);
+		@include adaptiveValue("margin-bottom", 38, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__title {
+		font-weight: 800;
+		font-size: rem(22);
+		line-height: 110.6%;
+		@include adaptiveValue("margin-bottom", 17, 10, $containerWidth, $minWidth, 1);
+	}
+
+	&__list {
+		flex: 1 1 auto;
+	}
+
+	&__item {
+		font-weight: 700;
+		color: $bgButtonOrange;
+		line-height: 157.6%;
+		position: relative;
+		padding-left: rem(16);
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: rem(8);
+			height: rem(8);
+			border-radius: 50%;
+			background-color: $buttonArrowBg;
+			top: rem(8);
+		}
+	}
+}
+//========================================================================================================================================================
+.projects {
+	background: url("@img/main/dots.svg") 0 0;
+	@include adaptiveValue("padding-top", 95, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 95, 30, $containerWidth, $minWidth, 1);
+	&__container {
+	}
+
+	&__up {
+		position: relative;
+	}
+
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 74, 20, $containerWidth, $minWidth, 1);
+		@media (min-width: $mobile) {
+			padding: 0 rem(120);
+		}
+	}
+
+	&__arrows {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		gap: rem(7);
+		right: 0;
+		top: 0;
+		@media (max-width: $mobile) {
+			display: none;
+		}
+		button {
+			width: rem(56);
+			height: rem(56);
+			flex: 0 0 rem(56);
+			color: $bgButtonOrange;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			border: rem(1) solid $bgButtonOrange;
+			transition: opacity 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+		&_prev {
+			transform: rotate(90deg);
+		}
+
+		&_next {
+			transform: rotate(-90deg);
+		}
+	}
+
+	&__slider {
+		overflow: visible !important;
+		@include adaptiveValue("margin-bottom", 74, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__swiper {
+	}
+
+	&__slide {
+		position: relative;
+		width: rem(360);
+		min-height: rem(212);
+		border-radius: rem(8);
+		overflow: hidden;
+		@media (max-width: $mobileSmall) {
+			width: rem(290);
+		}
+		&:not(:last-child) {
+			margin-right: rem(30);
+		}
+	}
+
+	&__image-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__labels {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		align-items: flex-end;
+		gap: rem(5);
+		height: 100%;
+		padding: rem(15);
+		@media (max-width: $mobileSmall) {
+			flex-direction: column;
+			align-items: start;
+			justify-content: flex-end;
+		}
+	}
+
+	&__label {
+		font-weight: 700;
+		font-size: rem(13);
+		line-height: 157.6%;
+		color: white;
+		background: $mainColor;
+		border-radius: rem(3);
+		padding: 0 rem(10);
+	}
+	&__button-shell {
+		display: flex;
+		justify-content: center;
+	}
+	&__button {
+	}
+}

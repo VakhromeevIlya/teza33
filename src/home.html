@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper" data-main-page>
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="fullscreen" data-fullscreen>
+				<div class="fullscreen__image-ibg"><img src="@img/main/bg.jpg" alt="Трубы, котлы"></div>
+				<div class="fullscreen__container">
+					<div class="fullscreen__body" data-fullscreen>
+						<h1 class="fullscreen__title">
+							Строительство котельных
+						</h1>
+						<div class="fullscreen__subtitle">
+							Компания Миг-Плюс предлагает проектирование, монтаж и строительство котельных. Наша организация
+							начала свою деятельность в 1997 году. Мы работаем в Москве, Московской области и в других регионах
+							России.
+						</div>
+						<button type="button" data-goto=".callback-form"
+							class="fullscreen__button button _icon-arrow-down">Наши работы</button>
+					</div>
+				</div>
+			</section>
+			<section class="advantages">
+				<div class="advantages__container">
+					<div class="advantages__shell">
+						<div class="advantages__up">
+							<h2 class="advantages__title">Преимущества работы с нами</h2>
+							<div class="advantages__certificated">
+								<div class="advantages__image-ibg"><img src="@img/main/sertificated.png" alt="сертификат"></div>
+								<a href="" class="advantages__link">
+									Сертифицированная продукция
+								</a>
+							</div>
+						</div>
+						<div class="advantages__grid grid-advantages">
+							<div class="grid-advantages__item">
+								<div class="grid-advantages__number">01</div>
+								<div class="grid-advantages__text">Работаем в сфере теплоэнергетики с 1997 года
+								</div>
+							</div>
+							<div class="grid-advantages__item grid-advantages__item_red">
+								<div class="grid-advantages__number">02</div>
+								<div class="grid-advantages__text">Работаем в сфере теплоэнергетики с 1997 года
+								</div>
+							</div>
+							<div class="grid-advantages__item">
+								<div class="grid-advantages__image-ibg"><img src="@img/main/content-1.jpg" alt="Картинка"></div>
+							</div>
+							<div class="grid-advantages__item grid-advantages__item_red">
+								<div class="grid-advantages__number">03</div>
+								<div class="grid-advantages__text">Работаем в сфере теплоэнергетики с 1997 года
+								</div>
+							</div>
+							<div class="grid-advantages__item">
+								<div class="grid-advantages__image-ibg"><img src="@img/main/content-2.jpg" alt="Картинка"></div>
+							</div>
+
+							<div class="grid-advantages__item">
+								<div class="grid-advantages__number">04</div>
+								<div class="grid-advantages__text">Работаем в сфере теплоэнергетики с 1997 года
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="types">
+				<div class="types__container">
+					<h2 class="types__title _title">Типы котельных</h2>
+					<div class="types__subtitle">
+						Мы проектируем, строим и обслуживаем промышленные котельные различных типов. Специалисты Миг-Плюс
+						подберут наиболее оптимальное решение для системы теплоснабжения, исходя из имеющихся условий и
+						необходимых технических характеристик. Обычно котельные классифицируют по виду топлива, по способу
+						размещения и по типу котлов.
+					</div>
+					<div class="types__cards cards-types">
+						<div class="cards-types__card">
+							<div class="cards-types__image-ibg"><img src="@img/main/fuel.svg" alt="Топливо"></div>
+							<div class="cards-types__title">По типу топлива</div>
+							<ul class="cards-types__list">
+								<li class="cards-types__item">Газ</li>
+								<li class="cards-types__item">Жидкое топливо</li>
+								<li class="cards-types__item">Электричество</li>
+								<li class="cards-types__item">Комбинированный тип</li>
+							</ul>
+						</div>
+						<div class="cards-types__card">
+							<div class="cards-types__image-ibg"><img src="@img/main/pump.svg" alt="Помпа"></div>
+							<div class="cards-types__title">По способу размещения</div>
+							<ul class="cards-types__list">
+								<li class="cards-types__item">Стационарные</li>
+								<li class="cards-types__item">Блочно-модульные (БМК)</li>
+								<li class="cards-types__item">Модульные котельные</li>
+							</ul>
+						</div>
+						<div class="cards-types__card">
+							<div class="cards-types__image-ibg"><img src="@img/main/sun.svg" alt="Солнце"></div>
+							<div class="cards-types__title">По типу теплоносителя</div>
+							<ul class="cards-types__list">
+								<li class="cards-types__item">Паровые</li>
+								<li class="cards-types__item">Водогрейные</li>
+								<li class="cards-types__item">Комбинированные</li>
+								<li class="cards-types__item">На диатермическом масле</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="projects">
+				<div class="projects__container">
+					<div class="projects__up">
+						<h2 class="projects__title _title">Наши проекты</h2>
+						<div class="projects__arrows">
+							<button type="button" class="projects__arrows_prev _icon-arrow-down"></button>
+							<button type="button" class="projects__arrows_next _icon-arrow-down"></button>
+						</div>
+					</div>
+					<div class="projects__slider">
+						<div class="projects__swiper">
+							<div class="projects__slide">
+								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
+								<div class="projects__labels">
+									<div class="projects__label">Город: Воронеж</div>
+									<div class="projects__label">Мощность: 13МВт</div>
+								</div>
+							</div>
+							<div class="projects__slide">
+								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
+								<div class="projects__labels">
+									<div class="projects__label">Город: Воронеж</div>
+									<div class="projects__label">Мощность: 13МВт</div>
+								</div>
+							</div>
+							<div class="projects__slide">
+								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
+								<div class="projects__labels">
+									<div class="projects__label">Город: Воронеж</div>
+									<div class="projects__label">Мощность: 13МВт</div>
+								</div>
+							</div>
+							<div class="projects__slide">
+								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
+								<div class="projects__labels">
+									<div class="projects__label">Город: Воронеж</div>
+									<div class="projects__label">Мощность: 13МВт</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="projects__button-shell">
+						<a href="" class="projects__button button _icon-arrow-down">Смотреть все</a>
+					</div>
+				</div>
+			</section>
+			<section class="callback-form">
+				<div class="callback-form__container">
+					<div class="callback-form__row">
+						<div class="callback-form__body">
+							<h2 class="callback-form__title">Заказать звонок</h2>
+							<a href="" class="callback-form__subtitle">Оставляя заявку вы принимаете условия пользовательского
+								соглашения и согласны с политикой конфеденциальности сайта</a>
+						</div>
+						<form action="#" class="callback-form__form">
+							<div class="form__row">
+								<div class="form__column">
+									<input autocomplete="off" type="text" name="form[]" data-error="*Введите корректные данные"
+										placeholder="Номер телефона" class="callback-form__input input _phone" data-required>
+								</div>
+								<button type="submit" class="button _icon-arrow-down button_dark">Отправить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+//====================================================================================================
+.header {
+	@include adaptiveValue("padding-top", 35, 10, $containerWidth, 992, 1);
+	@include adaptiveValue("padding-bottom", 15, 0, $containerWidth, 992, 1);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	transition: padding-top 0.3s ease;
+	&._header-scroll {
+		background-color: $bgHeader;
+		padding-top: rem(10);
+		@media (min-width: $mobile) {
+			padding-bottom: rem(0);
+		}
+		.header__shell {
+			@media (min-width: $mobile) {
+				row-gap: rem(20);
+			}
+		}
+	}
+	@media (max-width: $mobile) {
+		padding-bottom: rem(10);
+	}
+	.wrapper:not([data-main-page]) & {
+		background: $bgHeader;
+	}
+	//background-color: $bgHeader;
+	* {
+		color: white;
+	}
+	&__shell {
+		display: flex;
+		flex-direction: column;
+		transition: row-gap 0.3s ease 0s;
+		@include adaptiveValue("row-gap", 55, 20, $containerWidth, 992, 1);
+		@media (max-width: $mobile) {
+			row-gap: 0;
+		}
+	}
+	&__up {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		position: relative;
+		z-index: 5;
+		flex: 1 1 auto;
+		@include adaptiveValue("padding-right", 20, 10, $containerWidth, $minWidth, 1);
+		img {
+			width: rem(155);
+			height: rem(49);
+		}
+	}
+
+	&__phones {
+		position: relative;
+		z-index: 5;
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 20, 10, $containerWidth, $minWidth, 1);
+		@media (max-width: $mobile) {
+			@include adaptiveValue("padding-right", 20, 10, $containerWidth, $minWidth, 1);
+		}
+	}
+
+	&__phone {
+		white-space: nowrap;
+		transition: opacity 0.3s ease 0s;
+		opacity: 1;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(28);
+		}
+	}
+
+	&__button {
+		&::before {
+			color: white;
+		}
+		@media (max-width: em(600)) {
+			span {
+				display: none;
+			}
+		}
+	}
+}
+.menu {
+	&__body {
+		@media (max-width: $mobile) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: -100%;
+			background: $bgHeader;
+			padding: 0 rem(15) rem(20) rem(15);
+			overflow: auto;
+			transition: all 0.3s ease 0s;
+			&::before {
+				content: "";
+				position: fixed;
+				z-index: 5;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: rem(76);
+				background: $bgHeader;
+				transition: all 0.3s ease 0s;
+			}
+			.menu-open & {
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		padding-top: rem(86);
+		@media (min-width: $mobile) {
+			padding-top: 0;
+			row-gap: 0;
+			column-gap: rem(10);
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row;
+		}
+	}
+	&__button {
+		color: $bgButtonOrange;
+		transition: transform 0.3s ease 0s;
+		transform: translateY(6%) rotate(0deg);
+	}
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		column-gap: rem(7);
+		padding-bottom: rem(20);
+		cursor: pointer;
+		&::before {
+			color: $bgButtonOrange;
+		}
+		&_arrow-down {
+			&._active {
+				@media (min-width: $mobile) {
+					.menu__sublist {
+						opacity: 1;
+						visibility: visible;
+						margin-top: 0;
+						pointer-events: auto;
+					}
+				}
+				.menu__button {
+					transform: translateY(6%) rotate(-180deg);
+				}
+			}
+			@media (any-hover: hover) and (min-width: $mobile) {
+				&:hover {
+					.menu__sublist {
+						opacity: 1;
+						visibility: visible;
+						margin-top: rem(-5);
+						pointer-events: auto;
+					}
+					.menu__button {
+						transform: translateY(6%) rotate(-180deg);
+					}
+				}
+			}
+			@media (max-width: $mobile) {
+				flex-wrap: wrap;
+			}
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(28);
+			column-gap: rem(10);
+		}
+	}
+
+	&__link {
+		transition: opacity 0.3s ease 0s;
+		opacity: 1;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__sublist {
+		@media (min-width: $mobile) {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 3;
+		}
+		background: white;
+		padding: rem(15) 0 rem(15);
+		margin-top: rem(10);
+		box-shadow: 0px rem(4) rem(20) rgba(0, 0, 0, 0.1);
+		border-radius: rem(6);
+		min-width: rem(375);
+		margin-left: rem(-34);
+		transition: all 0.3s ease 0s;
+		pointer-events: none;
+		@media (max-width: $pc) {
+			margin-left: 0;
+		}
+		@media (max-width: $mobile) {
+			flex: 1 1 100%;
+			min-width: 0;
+		}
+		@media (max-width: $mobileSmall) {
+			margin: rem(10) rem(-15) 0;
+		}
+	}
+
+	&__subitem {
+		padding-left: rem(30);
+		transition: all 0.1s ease 0s;
+		border-left: rem(4) solid transparent;
+		cursor: pointer;
+		@media (max-width: $mobile) {
+			padding: rem(10) rem(15);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: $bgMenuSubLink;
+				border-color: $bgButtonOrange;
+			}
+		}
+	}
+
+	&__sublink {
+		line-height: 244.6%;
+		color: black;
+		padding-right: rem(15);
+		@media (max-width: $mobile) {
+			font-size: rem(22);
+			padding-right: 0;
+			line-height: 100%;
+		}
+	}
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		flex: 0 0 rem(30);
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: white;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - rem(1));
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - rem(1));
+			}
+		}
+	}
+}
