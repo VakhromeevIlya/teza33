@@ -765,7 +765,7 @@
 	"bs": {
 		"prefix": "bs",
 		"body": [
-			"box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"
+			"box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.3);"
 		],
 		"description": "bs"
 	},
@@ -973,6 +973,14 @@
 		],
 		"description": "ac_css"
 	},
+	"menuopen_css": {
+		"scope": "scss,css",
+		"prefix": "mo",
+		"body": [
+			".menu-open &{\n\t$0\n}"
+		],
+		"description": "mo_css"
+	},
 	"ac_html": {
 		"scope": "html,kit,javascript",
 		"prefix": "ac",
@@ -1075,7 +1083,7 @@
 	"aic": {
 		"prefix": "aic",
 		"body": [
-			"align-items:${1:center};"
+			"align-items:center;"
 		],
 		"description": "aic"
 	},
@@ -1229,7 +1237,7 @@
 	},
 	"logo": {
 		"prefix": "logo",
-		"body": "<a href=\"\" class=\"header__logo\"><img src=\"../img/logo.svg\" alt=\"\"></a>",
+		"body": "<a href=\"\" class=\"header__logo\"><img src=\"@img/logo.svg\" alt=\"Логотип\"></a>",
 		"description": "logo"
 	},
 	"Image": {
