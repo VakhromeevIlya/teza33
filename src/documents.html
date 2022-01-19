@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Документы и сертификаты"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="up-block">
+				<div class="up-block__container">
+					<div class="bread-crumbs">
+						<a href="home.html" class="bread-crumbs__label"><span>Главная страница</span></a>
+						<span class="bread-crumbs__label bread-crumbs__label_current">Документы и сертификаты</span>
+					</div>
+					<div class="documents">
+						<div class="documents__grid" data-gallery>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-1.png" class="documents__image-ibg">
+									<img src="@img/documents/document-1.png" alt="Бакси">
+								</a>
+								<div class="documents__title">Бакси</div>
+							</div>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-2.png" class="documents__image-ibg">
+									<img src="@img/documents/document-2.png"
+										alt='Сертификат официального партнера ООО "Бош Термотехника"'>
+								</a>
+								<div class="documents__title">Сертификат официального партнера ООО "Бош Термотехника"</div>
+							</div>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-3.png" class="documents__image-ibg">
+									<img src="@img/documents/document-3.png" alt="Вайсхаупт Николаев">
+								</a>
+								<div class="documents__title">Вайсхаупт Николаев</div>
+							</div>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-4.png" class="documents__image-ibg">
+									<img src="@img/documents/document-4.png" alt="Геффен Афанасьев">
+								</a>
+								<div class="documents__title">Геффен Афанасьев</div>
+							</div>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-1.png" class="documents__image-ibg">
+									<img src="@img/documents/document-1.png" alt="Ди Диктрих Самсонов">
+								</a>
+								<div class="documents__title">Ди Диктрих Самсонов</div>
+							</div>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-2.png" class="documents__image-ibg">
+									<img src="@img/documents/document-2.png" alt="Сертификат Виссманн Эйхорн">
+								</a>
+								<div class="documents__title">Сертификат Виссманн Эйхорн</div>
+							</div>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-3.png" class="documents__image-ibg">
+									<img src="@img/documents/document-3.png" alt="Сертификат сервисного партнёра">
+								</a>
+								<div class="documents__title">Сертификат сервисного партнёра</div>
+							</div>
+							<div class="documents__item">
+								<a data-gallery-item href="@img/documents/document-4.png" class="documents__image-ibg">
+									<img src="@img/documents/document-4.png"
+										alt="Сертификат на соответствие указанным стандартам.">
+								</a>
+								<div class="documents__title">Сертификат на соответствие указанным стандартам.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

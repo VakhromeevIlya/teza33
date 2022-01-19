@@ -8,11 +8,11 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			<section class="up-block">
+			<section class="up-block _dots">
 				<div class="up-block__container">
 					<div class="bread-crumbs">
-						<a href="home.html" class="bread-crumbs__label">Главная страница</a>
-						<a href="" class="bread-crumbs__label">Услуги</a>
+						<a href="home.html" class="bread-crumbs__label"><span>Главная страница</span></a>
+						<a href="" class="bread-crumbs__label"><span>Услуги</span></a>
 						<span class="bread-crumbs__label bread-crumbs__label_current">Строительство газовых котельных</span>
 					</div>
 					<div class="building">
@@ -131,17 +131,18 @@
 							</select>
 						</div>
 						<div class="form-calculator__line form-calculator__line_img" data-gallery>
-							<a href="@img/services/scheme.png" class="form-calculator__image-ibg">
+							<a data-gallery-item href="@img/services/sheme-lg.png" data-lg-size="1061-866"
+								class="form-calculator__image-ibg">
 								<img src="@img/services/scheme.png" alt="Чертеж">
 							</a>
 						</div>
 						<div class="form-calculator__line form-calculator__line_submit">
-							<div class="form-calculator__total">
-								<div class="form-calculator__total-body">
-									<div class="form-calculator__total-title">Стоимость котельной:</div>
-									<div class="form-calculator__total-price">13 892 350 ₽</div>
+							<div class="form-calculator__total submit-form">
+								<div class="submit-form__total-body">
+									<div class="submit-form__total-title">Стоимость котельной:</div>
+									<div class="submit-form__total-price">13 892 350 ₽</div>
 								</div>
-								<button type="submit" class="form-calculator__submit button">Получить расчет</button>
+								<button type="submit" class="submit-form__submit button">Получить расчет</button>
 							</div>
 						</div>
 					</form>

@@ -13,7 +13,7 @@
 			box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.5);
 		}
 		&:checked + .checkbox__label:before {
-			background: url("@img/icons/check.svg") center no-repeat $checkboxBg;
+			content: "\e903";
 		}
 	}
 	// .checkbox__label
@@ -25,7 +25,13 @@
 		gap: rem(20);
 		&:before {
 			content: "";
+			@extend %ic;
 			align-self: flex-start;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: rem(14);
+			color: $bgButtonOrange;
 			width: rem(34);
 			height: rem(34);
 			flex: 0 0 rem(34);

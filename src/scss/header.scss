@@ -141,6 +141,9 @@
 		color: $bgButtonOrange;
 		transition: transform 0.3s ease 0s;
 		transform: translateY(6%) rotate(0deg);
+		&::before {
+			font-size: em(11, 16);
+		}
 	}
 	&__item {
 		position: relative;
@@ -211,7 +214,7 @@
 		background: white;
 		padding: rem(15) 0 rem(15);
 		margin-top: rem(10);
-		box-shadow: 0px rem(4) rem(20) rgba(0, 0, 0, 0.1);
+		box-shadow: 0 rem(4) rem(20) rgba(0, 0, 0, 0.1);
 		border-radius: rem(6);
 		min-width: rem(375);
 		margin-left: rem(-34);

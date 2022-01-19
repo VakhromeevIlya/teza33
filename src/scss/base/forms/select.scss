@@ -19,7 +19,7 @@
 	&__value {
 		display: flex;
 		align-items: center;
-		height: rem(44);
+		min-height: rem(44);
 		padding: rem(15) rem(20);
 		justify-content: space-between;
 		flex-direction: row-reverse;
@@ -27,10 +27,11 @@
 		line-height: 103.1%;
 		color: $calculatorTitle;
 		&:before {
-			content: "\e901";
+			content: "\e902";
 			@extend %ic;
 			align-self: stretch;
 			flex: 0 0 rem(10);
+			font-size: rem(12);
 			transition: all 0.3s ease 0s;
 			display: flex;
 			color: $bgButtonOrange;
@@ -54,7 +55,7 @@
 	&__options {
 		color: $calculatorTitle;
 		position: absolute;
-		top: rem(23);
+		top: percent(23, 44);
 		border-radius: 0 0 rem(24) rem(24);
 		min-width: 100%;
 		left: 0;
@@ -62,7 +63,7 @@
 		border-top: 0;
 		border: rem(1) solid $rangeBg;
 		border-top: 0;
-		padding: rem(25) 0px rem(10) 0px;
+		padding: rem(30) 0 rem(10) 0;
 		z-index: -1;
 	}
 	// .select__scroll

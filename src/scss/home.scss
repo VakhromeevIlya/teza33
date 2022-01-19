@@ -99,7 +99,6 @@
 //========================================================================================================================================================
 //Блок преимуществ
 .advantages {
-	background: url("@img/main/dots.svg") 0 0;
 	@include adaptiveValue("padding-top", 85, 30, $containerWidth, $minWidth, 1);
 	@include adaptiveValue("padding-bottom", 85, 0, $containerWidth, 480, 1);
 
@@ -341,6 +340,8 @@
 
 	&__slide {
 		position: relative;
+		display: flex;
+		align-items: flex-end;
 		width: rem(360);
 		min-height: rem(212);
 		border-radius: rem(8);
@@ -366,8 +367,9 @@
 		z-index: 2;
 		display: flex;
 		align-items: flex-end;
+		flex-wrap: wrap;
 		gap: rem(5);
-		height: 100%;
+		flex: 1 1 100%;
 		padding: rem(15);
 		@media (max-width: $mobileSmall) {
 			flex-direction: column;

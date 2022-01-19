@@ -1,0 +1,65 @@
+//========================================================================================================================================================
+//Готовые бойлеры
+.ready-boiler {
+	@include adaptiveValue("padding-bottom", 110, 30, $containerWidth, $minWidth, 1);
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: em(45, 60);
+		}
+	}
+
+	&__text {
+		font-size: rem(20);
+		line-height: 157.6%;
+		color: $greyText;
+	}
+}
+//========================================================================================================================================================
+//Таблица с общей суммой
+.table-total {
+	&__grid {
+		@include adaptiveValue("padding-top", 70, 30, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-bottom", 70, 30, $containerWidth, $minWidth, 1);
+		display: grid;
+		grid-template-columns: 1fr percent(456, 1140);
+		@include adaptiveValue("column-gap", 77, 20, $containerWidth, 992, 1);
+		border-bottom: rem(1) solid $borderTableTotal;
+		row-gap: rem(20);
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__table {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(5);
+		flex-wrap: wrap;
+	}
+
+	&__title {
+		font-weight: 700;
+		color: black;
+		line-height: 110%;
+		flex: 1 1 auto;
+	}
+
+	&__value {
+		line-height: 110%;
+		text-align: right;
+		color: $textTableValue;
+	}
+
+	&__total {
+		height: 100%;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+	}
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Контакты"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="up-block">
+				<div class="up-block__container">
+					<div class="bread-crumbs">
+						<a href="home.html" class="bread-crumbs__label"><span>Главная страница</span></a>
+						<span class="bread-crumbs__label bread-crumbs__label_current">Контакты</span>
+					</div>
+					<div class="contacts">
+						<div class="contacts__grid">
+							<div class="contacts__body" data-spollers="43.75">
+								<div class="contacts__item">
+									<div class="contacts__title _icon-location" data-spoller><span>Адрес:</span></div>
+									<div class="contacts__text">
+										Московская обл., г. Серпухов, ул. <br> Авангардная, д. 15/44
+									</div>
+								</div>
+								<div class="contacts__item">
+									<div class="contacts__title _icon-phone" data-spoller><span>Телефоны:</span></div>
+									<div class="contacts__shell">
+										<ul class="contacts__list">
+											<li><a href="tel:+74922442233" class="contacts__link">+7 (4922) 44-22-33</a></li>
+											<li><a href="tel:+79207383913" class="contacts__link">+7 (920) 738-39-13</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="contacts__item">
+									<div class="contacts__title _icon-mail" data-spoller><span>E-mail:</span></div>
+									<div class="contacts__shell">
+										<ul class="contacts__list contacts__list_grid">
+											<li>
+												<a href="mailto:sales@teza33.ru" class="contacts__link _mail">sales@teza33.ru</a>
+												<div class="contacts__subtitle">отдел продаж</div>
+											</li>
+											<li>
+												<a href="mailto:info@teza33.ru" class="contacts__link _mail">info@teza33.ru</a>
+												<div class="contacts__subtitle">получение информации</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<button data-popup="#callback" type="button" class="contacts__button button _icon-phone">
+									<span>Перезвоните мне</span>
+								</button>
+							</div>
+							<div class="contacts__map">
+								<iframe
+									src="https://yandex.ru/map-widget/v1/?um=constructor%3Adb3ae3037b3997055e0a6d26112acc9cd80c5c2cf83ced0d66cbe1a964d9a8f6&amp;source=constructor"
+									frameborder="0"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -10,11 +10,13 @@
 	line-height: math.div(62, 60);
 }
 .up-block {
-	background: url("@img/main/dots.svg") 0 0;
 	@include adaptiveValue("padding-top", 205, 165, $containerWidth, 992, 1);
 	@media (max-width: $mobile) {
 		padding-top: rem(85);
 	}
+}
+._dots {
+	background: url("@img/main/dots.svg") 0 0;
 }
 .bread-crumbs {
 	gap: rem(8);
@@ -25,7 +27,9 @@
 	&__label {
 		font-size: rem(13);
 		line-height: 157.6%;
-		text-decoration-line: underline !important;
+		span {
+			text-decoration-line: underline !important;
+		}
 		color: $greyText;
 		position: relative;
 		display: inline-flex;
@@ -33,22 +37,82 @@
 		gap: rem(8);
 		@media (any-hover: hover) {
 			&:hover {
-				text-decoration: none !important;
+				span {
+					text-decoration: none !important;
+				}
 			}
 		}
 		&::after {
-			content: "";
+			content: "\e901";
+			@extend %ic;
 			display: block;
-			width: rem(20);
-			height: rem(20);
-			flex: 0 0 rem(20);
-			background: url("@img/icons/arrow-long.svg") center / contain no-repeat;
+			font-size: rem(17);
 		}
 		&_current {
 			text-decoration: none !important;
 			&::after {
 				display: none;
 			}
+		}
+	}
+}
+._no-padding-top {
+	padding-top: 0 !important;
+}
+._mail {
+	color: $linkColor;
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 1;
+			text-decoration: underline;
+		}
+	}
+}
+.submit-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-items: center;
+	align-items: center;
+	background: #ffffff;
+	border: 1px solid $calculatorSubmitBorder;
+	border-radius: rem(11);
+	@include adaptiveValue("padding", 36, 15, $containerWidth, 992, 1);
+	gap: rem(20);
+
+	&__total-title {
+		font-weight: 700;
+		font-size: rem(20);
+		line-height: 103.1%;
+		&:not(:last-child) {
+			margin-bottom: rem(12);
+		}
+	}
+
+	&__total-price {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 30, 24, $containerWidth, $minWidth, 1);
+		line-height: 103.1%;
+		color: $bgButtonOrange;
+	}
+
+	&__submit {
+		position: relative;
+		@media (max-width: $mobileSmall) {
+			flex: 1 1 100%;
+		}
+		&::before {
+			content: "\e903";
+			color: $bgButtonOrange;
+			@extend %ic;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(24);
+			height: rem(24);
+			flex: 0 0 rem(24);
+			font-size: rem(10);
+			border-radius: 50%;
+			background: $buttonArrowBg;
 		}
 	}
 }
