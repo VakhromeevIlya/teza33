@@ -1,4 +1,5 @@
 //====================================================================================================
+//Блок формы с красным фоном
 .callback-form {
 	background: $bgButtonOrange;
 	@include adaptiveValue("padding-top", 55, 30, $containerWidth, $minWidth, 1);
@@ -52,7 +53,7 @@
 	}
 }
 //====================================================================================================
-//========================================================================================================================================================
+//Первый полноэкранный блок
 .fullscreen {
 	position: relative;
 	&__image-ibg {
@@ -78,9 +79,6 @@
 	}
 
 	&__title {
-		font-weight: 800;
-		@include adaptiveValue("font-size", 60, 30, $containerWidth, $minWidth, 1);
-		line-height: math.div(62, 60);
 		color: $fullscreenTitle;
 		&:not(:last-child) {
 			margin-bottom: em(40, 60);
@@ -99,6 +97,7 @@
 	}
 }
 //========================================================================================================================================================
+//Блок преимуществ
 .advantages {
 	background: url("@img/main/dots.svg") 0 0;
 	@include adaptiveValue("padding-top", 85, 30, $containerWidth, $minWidth, 1);
@@ -213,6 +212,7 @@
 	}
 }
 //========================================================================================================================================================
+//Типы работ
 .types {
 	@include adaptiveValue("padding-top", 100, 30, $containerWidth, $minWidth, 1);
 	@include adaptiveValue("padding-bottom", 100, 30, $containerWidth, $minWidth, 1);
@@ -280,12 +280,11 @@
 	}
 }
 //========================================================================================================================================================
+//Блок "Наши проекты"
 .projects {
 	background: url("@img/main/dots.svg") 0 0;
 	@include adaptiveValue("padding-top", 95, 30, $containerWidth, $minWidth, 1);
 	@include adaptiveValue("padding-bottom", 95, 30, $containerWidth, $minWidth, 1);
-	&__container {
-	}
 
 	&__up {
 		position: relative;
@@ -340,9 +339,6 @@
 		@include adaptiveValue("margin-bottom", 74, 20, $containerWidth, $minWidth, 1);
 	}
 
-	&__swiper {
-	}
-
 	&__slide {
 		position: relative;
 		width: rem(360);
@@ -393,6 +389,132 @@
 		display: flex;
 		justify-content: center;
 	}
+}
+//========================================================================================================================================================
+//Блок с партнерами
+.partners {
+	background: $mainColor;
+	@include adaptiveValue("padding-top", 110, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 110, 30, $containerWidth, $minWidth, 1);
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr percent(560, 1140);
+		@include adaptiveValue("column-gap", 90, 20, $containerWidth, 992, 1);
+		@media (max-width: em(885)) {
+			grid-template-columns: 1fr;
+			row-gap: rem(20);
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		.partners__button._icon-arrow-down {
+			padding: 0;
+			&::before {
+				color: white;
+				background: $bgButtonOrange;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 40, 30, $containerWidth, $minWidth, 1);
+		color: white;
+		line-height: 118%;
+		&:not(:last-child) {
+			margin-bottom: em(25, 40);
+		}
+	}
+
+	&__subtitle {
+		font-size: rem(18);
+		line-height: 157.6%;
+		color: $fullscreenSubtitle;
+		flex: 1 1 auto;
+	}
+
 	&__button {
+		background: transparent;
+		align-self: start;
+		text-transform: uppercase;
+		span {
+			text-decoration: underline;
+		}
+	}
+
+	&__controllers {
+		color: white;
+		display: flex;
+		align-items: center;
+		column-gap: rem(30);
+		@include adaptiveValue("margin-bottom", 55, 20, $containerWidth, $minWidth, 1);
+		justify-content: flex-end;
+		.swiper-button-disabled {
+			opacity: 0.3;
+		}
+		button {
+			transition: opacity 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					&:not(.swiper-button-disabled) {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+	}
+
+	&__arrow {
+		&_prev {
+			transform: rotate(-180deg);
+		}
+	}
+
+	&__dots {
+		font-size: rem(20);
+		line-height: 118.1%;
+		color: $paginationPertners;
+		.swiper-pagination-current {
+			color: white;
+		}
+	}
+
+	&__slide {
+		width: 100%;
+		height: rem(362);
+		&:not(:last-child) {
+			margin-right: rem(30);
+		}
+		@media (max-width: em(885)) {
+			height: 100%;
+		}
+	}
+}
+.slide-partners {
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+		gap: rem(30);
+		@media (max-width: $tablet) {
+			gap: rem(15);
+		}
+	}
+
+	&__image-ibg {
+		background: #2c2c2c;
+		border-radius: rem(8);
+		height: rem(166);
+		img {
+			padding: rem(30);
+			object-fit: none;
+			max-width: 100%;
+			width: auto;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 }

@@ -33,6 +33,12 @@ $advantagesNumber: rgba(99, 106, 103, 0.2);
 $advantagesItemGrey: #f6f6f6;
 $advantagesItemRed: #ae281d;
 $advantagesNumberRed: rgba(228, 60, 48, 0.36);
+$paginationPertners: #808080;
+$rangeBg: #f2f2f2;
+$rangeToggle: #7d7d7d;
+$calculatorTitle: #5c5c5c;
+$calculatorSubmitBorder: #e4e4e4;
+$checkboxBg: #ececec;
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
 $minWidth: 320;
@@ -152,3 +158,4 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "services";

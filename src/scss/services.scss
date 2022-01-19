@@ -1,0 +1,300 @@
+//========================================================================================================================================================
+//Строительный блок
+.building {
+	display: grid;
+	grid-template-columns: 1fr rem(290);
+	@include adaptiveValue("gap", 90, 20, $containerWidth, 992, 1);
+	@media (max-width: $mobile) {
+		grid-template-columns: 1fr;
+	}
+	&__body {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: em(45, 60);
+		}
+	}
+
+	&__text {
+		font-size: rem(20);
+		color: $greyText;
+		line-height: 157.6%;
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 50, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__aside {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: rem(20);
+		@media (max-width: $mobile) {
+			gap: rem(15);
+			grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
+		}
+	}
+}
+.aside-building {
+	&__item {
+		background: $advantagesItemRed;
+		min-height: rem(100);
+	}
+
+	&__number {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 128, 70, $containerWidth, $minWidth, 1);
+		line-height: 122.6%;
+		color: $advantagesNumberRed;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: 130%;
+		color: #ffffff;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		margin-top: rem(-55);
+		@include adaptiveValue("padding-left", 20, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-right", 20, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-bottom", 40, 15, $containerWidth, $minWidth, 1);
+		max-width: 60%;
+		@media (max-width: $mobile) {
+			max-width: 75%;
+		}
+		@media (max-width: $mobileSmall) {
+			max-width: 100%;
+		}
+	}
+}
+//========================================================================================================================================================
+//Calculator
+.calculator {
+	@include adaptiveValue("padding-top", 80, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 80, 30, $containerWidth, $minWidth, 1);
+	&__container {
+	}
+
+	&__form {
+	}
+
+	&__note {
+	}
+	&__title {
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 70, 20, $containerWidth, $minWidth, 1);
+	}
+}
+.form-calculator {
+	display: grid;
+	@include adaptiveValue("margin-bottom", 60, 20, $containerWidth, $minWidth, 1);
+	grid-template-areas:
+		"power power img img"
+		"quantity length img img"
+		"type maker img img"
+		"checkbox select submit submit";
+	grid-auto-rows: auto;
+	@include adaptiveValue("row-gap", 70, 20, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("column-gap", 30, 20, $containerWidth, $minWidth, 1);
+	grid-template-columns: repeat(4, 1fr);
+	@media (max-width: $tablet) {
+		grid-template-areas:
+			"power quantity length"
+			"type maker select"
+			"checkbox submit submit"
+			"img img img";
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@media (max-width: em(850)) {
+		grid-template-areas:
+			"power power"
+			"length quantity"
+			"type maker"
+			"select select"
+			"checkbox checkbox"
+			"submit submit"
+			"img img";
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width: em(550)) {
+		grid-template-areas:
+			"power"
+			"length"
+			"quantity"
+			"type"
+			"maker"
+			"select"
+			"checkbox"
+			"submit"
+			"img";
+		grid-template-columns: 1fr;
+	}
+	&__line {
+		position: relative;
+		&_power {
+			grid-area: power;
+			.form-calculator__values {
+				margin-top: rem(22);
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: rem(10);
+				div {
+					font-size: rem(14);
+					line-height: 103.1%;
+					color: $calculatorTitle;
+				}
+			}
+		}
+		&_power,
+		&_quantity,
+		&_length {
+			.form-calculator__title {
+				@include adaptiveValue("margin-bottom", 70, 40, $containerWidth, $minWidth, 1);
+			}
+		}
+
+		&_quantity {
+			grid-area: quantity;
+		}
+
+		&_length {
+			grid-area: length;
+		}
+
+		&_type {
+			grid-area: type;
+		}
+		&_type,
+		&_maker {
+			.form-calculator__title {
+				@include adaptiveValue("margin-bottom", 30, 20, $containerWidth, $minWidth, 1);
+			}
+		}
+
+		&_maker {
+			grid-area: maker;
+		}
+
+		&_checkbox {
+			grid-area: checkbox;
+			.checkbox {
+				@media (max-width: em(850)) {
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+			}
+		}
+
+		&_select {
+			grid-area: select;
+			.form-calculator__title {
+				margin-bottom: rem(15);
+			}
+		}
+
+		&_img {
+			grid-area: img;
+			img {
+				max-width: 100%;
+				width: auto;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			@media (max-width: $tablet) {
+				padding-bottom: 79%;
+			}
+		}
+
+		&_submit {
+			grid-area: submit;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		line-height: 103.1%;
+		color: $calculatorTitle;
+	}
+
+	&__item-range {
+	}
+
+	&__values {
+	}
+	&__value {
+		transition: color 0.3s ease 0s;
+		font-weight: 700;
+		font-size: rem(19);
+		line-height: 103.1%;
+		color: $rangeToggle;
+		&._active {
+			color: $bgButtonOrange;
+		}
+	}
+
+	&__toggle {
+		display: flex;
+		align-items: center;
+		gap: rem(25);
+	}
+
+	&__image-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__total {
+		display: flex;
+		flex-wrap: wrap;
+		justify-items: center;
+		align-items: center;
+		background: #ffffff;
+		border: 1px solid $calculatorSubmitBorder;
+		border-radius: rem(11);
+		@include adaptiveValue("padding", 36, 15, $containerWidth, 992, 1);
+		gap: rem(20);
+		@media (min-width: $mobileSmall) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__total-body {
+	}
+
+	&__total-title {
+		font-weight: 700;
+		font-size: rem(20);
+		line-height: 103.1%;
+		&:not(:last-child) {
+			margin-bottom: rem(12);
+		}
+	}
+
+	&__total-price {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 30, 24, $containerWidth, $minWidth, 1);
+		line-height: 103.1%;
+		color: $bgButtonOrange;
+	}
+
+	&__submit {
+		position: relative;
+		&::before {
+			content: "";
+			color: $bgButtonOrange;
+			width: rem(20);
+			height: rem(20);
+			flex: 0 0 rem(20);
+			border-radius: 50%;
+			background: url("@img/icons/check.svg") center no-repeat $buttonArrowBg;
+		}
+	}
+}
+
+//========================================================================================================================================================

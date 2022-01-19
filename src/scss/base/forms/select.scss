@@ -10,26 +10,30 @@
 	&__title {
 		color: inherit;
 		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
 		cursor: pointer;
 		width: 100%;
-		border-radius: 4px;
+		background: $rangeBg;
+		border-radius: rem(24);
 	}
 	// .select__value
 	&__value {
 		display: flex;
 		align-items: center;
-		height: 30px;
-		padding: 0px 15px;
+		height: rem(44);
+		padding: rem(15) rem(20);
 		justify-content: space-between;
 		flex-direction: row-reverse;
+		font-size: rem(14);
+		line-height: 103.1%;
+		color: $calculatorTitle;
 		&:before {
-			content: "";
+			content: "\e901";
+			@extend %ic;
 			align-self: stretch;
-			flex: 0 0 10px;
+			flex: 0 0 rem(10);
 			transition: all 0.3s ease 0s;
 			display: flex;
+			color: $bgButtonOrange;
 			justify-content: center;
 			align-items: center;
 			._select-open & {
@@ -48,24 +52,25 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
+		color: $calculatorTitle;
 		position: absolute;
-		top: 29px;
-		border-radius: 0 0 4px 4px;
+		top: rem(23);
+		border-radius: 0 0 rem(24) rem(24);
 		min-width: 100%;
 		left: 0;
 		background-color: #fff;
 		border-top: 0;
-		border: 1px solid #d9d9d9;
+		border: rem(1) solid $rangeBg;
 		border-top: 0;
-		padding: 10px 0px 5px 0px;
+		padding: rem(25) 0px rem(10) 0px;
+		z-index: -1;
 	}
 	// .select__scroll
 	&__scroll {
 		overflow-y: auto;
 		overflow-x: hidden;
 		// Максимальная высота
-		max-height: 200px;
+		max-height: rem(200);
 		// Стили скроллбара
 		.simplebar-scrollbar {
 			&::before {
@@ -79,7 +84,7 @@
 		display: block;
 		text-align: left;
 		cursor: pointer;
-		padding: 5px 15px;
+		padding: rem(5) rem(15);
 		color: inherit;
 		&._select-selected {
 			background-color: #eee;

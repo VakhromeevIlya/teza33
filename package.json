@@ -45,7 +45,6 @@
 		"gulp-webpcss": "1.1.1",
 		"gulp-zip": "5.1.0",
 		"html-webpack-plugin": "5.5.0",
-		"lightgallery": "2.3.0",
 		"load-plugins": "2.1.2",
 		"mini-css-extract-plugin": "2.4.5",
 		"nouislider": "15.5.0",
@@ -70,6 +69,7 @@
 	},
 	"dependencies": {
 		"inputmask": "^5.0.7",
+		"lightgallery": "^2.3.0",
 		"simplebar": "5.3.6"
 	}
 }

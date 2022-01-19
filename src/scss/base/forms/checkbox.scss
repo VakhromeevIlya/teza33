@@ -1,8 +1,8 @@
 .checkbox {
 	position: relative;
-	&:not(:last-child) {
-		margin-bottom: em(5);
-	}
+	display: flex;
+	flex-direction: column;
+	gap: rem(20);
 	// .checkbox__input
 	&__input {
 		position: absolute;
@@ -10,10 +10,10 @@
 		height: 0;
 		opacity: 0;
 		&:focus + .checkbox__label:before {
-			box-shadow: 0 0 5px #000;
+			box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.5);
 		}
 		&:checked + .checkbox__label:before {
-			background: #000;
+			background: url("@img/icons/check.svg") center no-repeat $checkboxBg;
 		}
 	}
 	// .checkbox__label
@@ -22,17 +22,21 @@
 		display: inline-flex;
 		align-items: center;
 		position: relative;
-		gap: 10px;
+		gap: rem(20);
 		&:before {
 			content: "";
 			align-self: flex-start;
-			flex: 0 0 20px;
-			width: 20px;
-			height: 20px;
-			border: 1px solid #a7a9ac;
+			width: rem(34);
+			height: rem(34);
+			flex: 0 0 rem(34);
+			background-color: $checkboxBg;
+			border-radius: rem(4);
 		}
 	}
 	// .checkbox__text
 	&__text {
+		font-size: rem(16);
+		line-height: 103.1%;
+		color: $calculatorTitle;
 	}
 }

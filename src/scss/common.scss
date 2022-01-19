@@ -4,4 +4,52 @@
 	@include adaptiveValue("font-size", 40, 30, $containerWidth, $minWidth, 1);
 	line-height: 110.6%;
 }
+.h1-title {
+	font-weight: 800;
+	@include adaptiveValue("font-size", 60, 30, $containerWidth, $minWidth, 1);
+	line-height: math.div(62, 60);
+}
+.up-block {
+	background: url("@img/main/dots.svg") 0 0;
+	@include adaptiveValue("padding-top", 205, 165, $containerWidth, 992, 1);
+	@media (max-width: $mobile) {
+		padding-top: rem(85);
+	}
+}
+.bread-crumbs {
+	gap: rem(8);
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	@include adaptiveValue("margin-bottom", 75, 20, $containerWidth, $minWidth, 1);
+	&__label {
+		font-size: rem(13);
+		line-height: 157.6%;
+		text-decoration-line: underline !important;
+		color: $greyText;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: rem(8);
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+		&::after {
+			content: "";
+			display: block;
+			width: rem(20);
+			height: rem(20);
+			flex: 0 0 rem(20);
+			background: url("@img/icons/arrow-long.svg") center / contain no-repeat;
+		}
+		&_current {
+			text-decoration: none !important;
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
 //========================================================================================================================================================
