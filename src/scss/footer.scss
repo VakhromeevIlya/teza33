@@ -22,8 +22,10 @@
 		grid-template-columns: 1fr;
 	}
 
-	&__logo {
+	&__logo-ibg {
 		display: block;
+		width: rem(155);
+		height: rem(49);
 		@include adaptiveValue("margin-bottom", 60, 20, $containerWidth, $minWidth, 1);
 	}
 	&__contacts {
