@@ -138,3 +138,9 @@
 	line-clamp: 4;
 	box-orient: vertical;
 }
+img:not([src]):not([srcset]) {
+	visibility: hidden;
+}
+source:not([src]):not([srcset]) {
+	visibility: hidden;
+}
