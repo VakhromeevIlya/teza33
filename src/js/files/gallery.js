@@ -46,6 +46,7 @@ if (galleries.length) {
 			selector: "[data-gallery-item]",
 			zoom: true,
 			rotate: true,
+			preload: 1,
 			licenseKey: '7EC452A9-0CFD441C-BD984C7C-17C8456E',
 			speed: 500,
 		});

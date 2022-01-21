@@ -11,7 +11,19 @@
 			<section class="fullscreen" data-fullscreen>
 				<div class="fullscreen__image-ibg">
 					<picture>
-						<source data-srcset="@img/main/bg.webp" type="image/webp">
+						<source media="(min-width: 20em) and (max-width: 29.9375em)" data-srcset="@img/main/bg-480.webp"
+							type="image/webp">
+						<source media="(min-width: 20em) and (max-width: 29.9375em)" data-srcset="@img/main/bg-480.jpg">
+						<source media="(min-width: 30em) and (max-width: 47.9375em)" data-srcset="@img/main/bg-768.webp"
+							type="image/webp">
+						<source media="(min-width: 30em) and (max-width: 47.9375em)" data-srcset="@img/main/bg-768.jpg">
+						<source media="(min-width: 48em) and (max-width: 61.9375em)" data-srcset="@img/main/bg-992.webp"
+							type="image/webp">
+						<source media="(min-width: 48em) and (max-width: 61.9375em)" data-srcset="@img/main/bg-992.jpg">
+						<source media="(min-width: 62em) and (max-width: 71.1875em)" data-srcset="@img/main/bg-1140.webp"
+							type="image/webp">
+						<source media="(min-width: 62em) and (max-width: 71.1875em)" data-srcset="@img/main/bg-1140.jpg">
+						<source media="(min-width: 71.25em)" data-srcset="@img/main/bg.webp" type="image/webp">
 						<img class="_lazy" data-src="@img/main/bg.jpg" alt="Картинка">
 					</picture>
 				</div>
@@ -112,7 +124,8 @@
 							</ul>
 						</div>
 						<div class="cards-types__card">
-							<div class="cards-types__image-ibg"><img data-src="@img/main/pump.svg" class="_lazy" alt="Помпа"></div>
+							<div class="cards-types__image-ibg"><img data-src="@img/main/pump.svg" class="_lazy" alt="Помпа">
+							</div>
 							<div class="cards-types__title">По способу размещения</div>
 							<ul class="cards-types__list">
 								<li class="cards-types__item">Стационарные</li>
@@ -121,7 +134,8 @@
 							</ul>
 						</div>
 						<div class="cards-types__card">
-							<div class="cards-types__image-ibg"><img data-src="@img/main/sun.svg" class="_lazy" alt="Солнце"></div>
+							<div class="cards-types__image-ibg"><img data-src="@img/main/sun.svg" class="_lazy" alt="Солнце">
+							</div>
 							<div class="cards-types__title">По типу теплоносителя</div>
 							<ul class="cards-types__list">
 								<li class="cards-types__item">Паровые</li>
@@ -134,8 +148,8 @@
 				</div>
 			</section>
 			@@include('html/_projects.htm',{
-				"title": "Наши проекты"
-			}) 
+			"title": "Наши проекты"
+			})
 			@@include('html/_partners.htm',{})
 			<section class="callback-form">
 				<div class="callback-form__container">

@@ -58,10 +58,7 @@ function initSliders() {
 				slidesPerView: "auto",
 				speed: 500,
 				loop: loop,
-				preloadImages: false,
-				lazy: true,
 				watchOverflow: true,
-				watchSlidesProgress: true,
 				// Arrows
 				navigation: {
 					nextEl: '.projects__arrows_next',
@@ -72,36 +69,29 @@ function initSliders() {
 		createProject(loop);
 	}
 	if (document.querySelector('.partners__slider')) {
-		const slides = document.querySelectorAll('.partners__slide');
-		const loop = slides.length > 3;
-		function createPartners(loop) {
-			new Swiper('.partners__slider', {
-				// Подключаем модули слайдера
-				// для конкретного случая
-				modules: [Navigation, Pagination],
-				observer: true,
-				observeParents: true,
-				slidesPerView: "auto",
-				speed: 500,
-				//touchRatio: 0,
-				//simulateTouch: false,
-				loop: loop,
-				preloadImages: false,
-				lazy: true,
-				// Dotts
-				pagination: {
-					el: '.partners__dots',
-					clickable: true,
-					type: 'fraction'
-				},
-				// Arrows
-				navigation: {
-					nextEl: '.partners__arrow_next',
-					prevEl: '.partners__arrow_prev',
-				},
-			});
-		}
-		createPartners(loop);
+		new Swiper('.partners__slider', {
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: "auto",
+			speed: 500,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			// Dotts
+			pagination: {
+				el: '.partners__dots',
+				clickable: true,
+				type: 'fraction'
+			},
+			// Arrows
+			navigation: {
+				nextEl: '.partners__arrow_next',
+				prevEl: '.partners__arrow_prev',
+			},
+		});
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
