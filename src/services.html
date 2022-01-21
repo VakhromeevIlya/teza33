@@ -131,10 +131,12 @@
 							</select>
 						</div>
 						<div class="form-calculator__line form-calculator__line_img" data-gallery>
-							<a data-gallery-item href="@img/services/sheme-lg.png" data-lg-size="1061-866"
+							<picture data-gallery-item data-src="@img/services/scheme.png"
+								data-sources='[{"srcset": "@img/services/scheme.webp","type":"image/webp"}]'
 								class="form-calculator__image-ibg">
-								<img src="@img/services/scheme.png" alt="Чертеж">
-							</a>
+								<source data-srcset="@img/services/scheme.webp" type="image/webp">
+								<img data-src="@img/services/scheme.png" alt="Схема" class="_lazy">
+							</picture>
 						</div>
 						<div class="form-calculator__line form-calculator__line_submit">
 							<div class="form-calculator__total submit-form">
@@ -151,52 +153,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="projects">
-				<div class="projects__container">
-					<div class="projects__up">
-						<h2 class="projects__title _title">Проекты газовых котельных</h2>
-						<div class="projects__arrows">
-							<button type="button" class="projects__arrows_prev _icon-arrow-down"></button>
-							<button type="button" class="projects__arrows_next _icon-arrow-down"></button>
-						</div>
-					</div>
-					<div class="projects__slider">
-						<div class="projects__swiper">
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="projects__button-shell">
-						<a href="" class="projects__button button _icon-arrow-down">Смотреть все</a>
-					</div>
-				</div>
-			</section>
+			@@include('html/_projects.htm',{
+			"title": "Проекты газовых котельных"
+			})
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

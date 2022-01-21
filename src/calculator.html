@@ -93,10 +93,12 @@
 								</select>
 							</div>
 							<div class="form-calculator__line form-calculator__line_img" data-gallery>
-								<a data-gallery-item href="@img/services/sheme-lg.png" data-lg-size="1061-866"
+								<picture data-gallery-item data-src="@img/services/scheme.png"
+									data-sources='[{"srcset": "@img/services/scheme.webp","type":"image/webp"}]'
 									class="form-calculator__image-ibg">
-									<img src="@img/services/scheme.png" alt="Чертеж">
-								</a>
+									<source data-srcset="@img/services/scheme.webp" type="image/webp">
+									<img data-src="@img/services/scheme.png" alt="Схема" class="_lazy">
+								</picture>
 							</div>
 							<div class="form-calculator__line form-calculator__line_submit">
 								<div class="form-calculator__total submit-form">

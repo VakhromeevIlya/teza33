@@ -7,6 +7,9 @@
 		@include adaptiveValue("column-gap", 30, 15, $containerWidth, $minWidth, 1);
 		@include adaptiveValue("row-gap", 70, 15, $containerWidth, $minWidth, 1);
 	}
+	&__item {
+		cursor: pointer;
+	}
 	&__title {
 		font-weight: 700;
 		line-height: 157.6%;
@@ -16,6 +19,8 @@
 		display: block;
 		padding-bottom: percent(370, 260);
 		margin-bottom: rem(20);
+		position: relative;
+		z-index: 1;
 	}
 }
 

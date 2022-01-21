@@ -83,6 +83,9 @@
 }
 .form-calculator {
 	display: grid;
+	&__image-ibg {
+		cursor: pointer;
+	}
 	@include adaptiveValue("margin-bottom", 60, 20, $containerWidth, $minWidth, 1);
 	grid-template-areas:
 		"power power img img"

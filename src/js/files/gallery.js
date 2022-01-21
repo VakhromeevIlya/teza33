@@ -11,14 +11,14 @@ import lightGallery from 'lightgallery';
 // Плагины
 // lgZoom, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager, lgRotate, lgShare, lgThumbnail, lgVideo, lgMediumZoom
 import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.es5.js';
-import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.umd.js';
+//import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.umd.js';
 import lgFullscreen from 'lightgallery/plugins/fullscreen/lg-fullscreen.es5.js';
 import lgRotate from 'lightgallery/plugins/rotate/lg-rotate.es5.js';
 
 // Базовые стили
 import '@scss/libs/gallery/lightgallery.scss';
 // Стили дополнений
-import '@scss/libs/gallery/lg-thumbnail.scss';
+//import '@scss/libs/gallery/lg-thumbnail.scss';
 // import '@scss/libs/gallery/lg-video.scss';
 // import '@scss/libs/gallery/lg-autoplay.scss';
 import '@scss/libs/gallery/lg-zoom.scss';
@@ -37,9 +37,11 @@ import '@scss/libs/gallery/lg-rotate.scss';
 const galleries = document.querySelectorAll('[data-gallery]');
 if (galleries.length) {
 	galleries.forEach(gallery => {
+		gallery.addEventListener('lgInit', (e) => {
+			console.log(e);
+		});
 		lightGallery(gallery, {
-			plugins: [lgZoom, lgFullscreen, lgThumbnail, lgRotate],
-			thumbnail: true,
+			plugins: [lgZoom, lgFullscreen, lgRotate],
 			fullScreen: true,
 			selector: "[data-gallery-item]",
 			zoom: true,

@@ -113,52 +113,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="projects">
-				<div class="projects__container">
-					<div class="projects__up">
-						<h2 class="projects__title _title">Выполненные проекты</h2>
-						<div class="projects__arrows">
-							<button type="button" class="projects__arrows_prev _icon-arrow-down"></button>
-							<button type="button" class="projects__arrows_next _icon-arrow-down"></button>
-						</div>
-					</div>
-					<div class="projects__slider">
-						<div class="projects__swiper">
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-							<div class="projects__slide">
-								<div class="projects__image-ibg"><img src="@img/main/content-3.jpg" alt="картинка"></div>
-								<div class="projects__labels">
-									<div class="projects__label">Город: Воронеж</div>
-									<div class="projects__label">Мощность: 13МВт</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="projects__button-shell">
-						<a href="" class="projects__button button _icon-arrow-down">Смотреть все</a>
-					</div>
-				</div>
-			</section>
+			@@include('html/_projects.htm',{
+				"title": "Выполненные проекты"
+			})
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

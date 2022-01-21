@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -46,64 +46,62 @@ function initSliders() {
 
 	// Перечень слайдеров
 	if (document.querySelector('.projects__slider')) {
-		new Swiper('.projects__slider', {
-			// Подключаем модули слайдера
-			// для конкретного случая
-			modules: [Navigation],
-			/*
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
-			observer: true,
-			observeParents: true,
-			slidesPerView: "auto",
-			speed: 500,
-			//touchRatio: 0,
-			//simulateTouch: false,
-			loop: true,
-			//preloadImages: false,
-			//lazy: true,
-			// Dotts
-			//pagination: {
-			//	el: '.main-slider__bullets',
-			//	clickable: true,
-			//},
-			// Arrows
-			navigation: {
-				nextEl: '.projects__arrows_next',
-				prevEl: '.projects__arrows_prev',
-			},
-		});
+		const slides = document.querySelectorAll('.projects__slide');
+		const loop = slides.length > 3;
+		function createProject(loop) {
+			new Swiper('.projects__slider', {
+				// Подключаем модули слайдера
+				// для конкретного случая
+				modules: [Navigation, Lazy],
+				observer: true,
+				observeParents: true,
+				slidesPerView: "auto",
+				speed: 500,
+				loop: loop,
+				preloadImages: false,
+				lazy: true,
+				watchOverflow: true,
+				watchSlidesProgress: true,
+				// Arrows
+				navigation: {
+					nextEl: '.projects__arrows_next',
+					prevEl: '.projects__arrows_prev',
+				},
+			});
+		}
+		createProject(loop);
 	}
 	if (document.querySelector('.partners__slider')) {
-		new Swiper('.partners__slider', {
-			// Подключаем модули слайдера
-			// для конкретного случая
-			modules: [Navigation, Pagination],
-			observer: true,
-			observeParents: true,
-			slidesPerView: "auto",
-			speed: 500,
-			//touchRatio: 0,
-			//simulateTouch: false,
-			loop: true,
-			//preloadImages: false,
-			//lazy: true,
-			// Dotts
-			pagination: {
-				el: '.partners__dots',
-				clickable: true,
-				type: 'fraction'
-			},
-			// Arrows
-			navigation: {
-				nextEl: '.partners__arrow_next',
-				prevEl: '.partners__arrow_prev',
-			},
-		});
+		const slides = document.querySelectorAll('.partners__slide');
+		const loop = slides.length > 3;
+		function createPartners(loop) {
+			new Swiper('.partners__slider', {
+				// Подключаем модули слайдера
+				// для конкретного случая
+				modules: [Navigation, Pagination],
+				observer: true,
+				observeParents: true,
+				slidesPerView: "auto",
+				speed: 500,
+				//touchRatio: 0,
+				//simulateTouch: false,
+				loop: loop,
+				preloadImages: false,
+				lazy: true,
+				// Dotts
+				pagination: {
+					el: '.partners__dots',
+					clickable: true,
+					type: 'fraction'
+				},
+				// Arrows
+				navigation: {
+					nextEl: '.partners__arrow_next',
+					prevEl: '.partners__arrow_prev',
+				},
+			});
+		}
+		createPartners(loop);
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
