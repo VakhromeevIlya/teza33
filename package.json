@@ -60,7 +60,6 @@
 		"terser-webpack-plugin": "5.3.0",
 		"tippy.js": "6.3.7",
 		"transform-runtime": "0.0.0",
-		"vanilla-lazyload": "17.5.0",
 		"vinyl-ftp": "0.6.1",
 		"webp-converter": "2.2.3",
 		"webpack": "5.66.0",
@@ -71,6 +70,7 @@
 	"dependencies": {
 		"inputmask": "^5.0.7",
 		"lightgallery": "^2.3.0",
-		"simplebar": "5.3.6"
+		"simplebar": "5.3.6",
+		"vanilla-lazyload": "^17.5.0"
 	}
 }
