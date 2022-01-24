@@ -24,9 +24,9 @@
 			align-items: center;
 			justify-content: center;
 			transform: rotate(-90deg);
-			font-size: rem(11);
-			width: rem(30);
-			height: rem(30);
+			font-size: rem(8);
+			width: rem(24);
+			height: rem(24);
 			border-radius: 50%;
 			background: $buttonArrowBg;
 		}
@@ -40,6 +40,20 @@
 		&::before {
 			color: $bgHeader;
 			background: white;
+		}
+	}
+	&_white._icon-arrow-down {
+		&.button_showmore {
+			&::before {
+				transform: rotate(0deg);
+			}
+		}
+		color: black;
+		background: white;
+		border: rem(1) solid $bgButtonOrange;
+		&::before {
+			color: white;
+			background: $bgButtonOrange;
 		}
 	}
 	@media (any-hover: hover) {

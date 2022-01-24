@@ -1,0 +1,144 @@
+//========================================================================================================================================================
+//Страница одного проекта
+.project-single-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	@include adaptiveValue("padding-bottom", 120, 30, $containerWidth, $minWidth, 1);
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: em(50, 60);
+		}
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 20, 16, $containerWidth, $minWidth, 1);
+		line-height: 165.6%;
+		@include adaptiveValue("margin-bottom", 48, 20, $containerWidth, $minWidth, 1);
+		color: $greyText;
+	}
+
+	&__button {
+	}
+}
+.done-services {
+	@include adaptiveValue("padding-top", 80, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 120, 30, $containerWidth, $minWidth, 1);
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 24, 20, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("margin-bottom", 40, 20, $containerWidth, $minWidth, 1);
+		line-height: 103.1%;
+	}
+
+	&__list {
+	}
+
+	&__list-item {
+		font-size: rem(17);
+		line-height: 177.6%;
+		color: $greyText;
+		position: relative;
+		display: flex;
+		gap: rem(9);
+		&::before {
+			content: "";
+			width: rem(8);
+			height: rem(8);
+			background: $buttonArrowBg;
+			border-radius: 50%;
+			transform: translateY(rem(10));
+		}
+	}
+
+	&__images {
+		@include adaptiveValue("padding-top", 80, 20, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-bottom", 80, 20, $containerWidth, $minWidth, 1);
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(rem(260), 1fr));
+		@include adaptiveValue("gap", 30, 15, $containerWidth, $minWidth, 1);
+	}
+
+	&__image-ibg {
+		height: 0;
+		padding-bottom: 65%;
+		border-radius: rem(11);
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	&__review {
+		background: $bgMenuSubLink;
+		border-radius: rem(10);
+		@include adaptiveValue("padding", 40, 15, $containerWidth, $minWidth, 1);
+	}
+
+	&__review-title {
+		font-weight: 800;
+		font-size: rem(18);
+		line-height: 103.1%;
+		color: $bgButtonOrange;
+		margin-bottom: rem(11);
+	}
+
+	&__review-text {
+		font-size: rem(16);
+		line-height: 165.6%;
+		color: $greyText;
+	}
+}
+.request {
+	background: $bgButtonOrange;
+	@include adaptiveValue("padding-top", 50, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 50, 30, $containerWidth, $minWidth, 1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 35, 24, $containerWidth, $minWidth, 1);
+		line-height: 118.1%;
+		text-align: center;
+		color: #ffffff;
+		margin-bottom: rem(13);
+	}
+
+	&__subtitle {
+		font-size: rem(16);
+		line-height: 165.6%;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.8);
+		@include adaptiveValue("margin-bottom", 50, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__form {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		justify-content: center;
+		@include adaptiveValue("gap", 30, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("margin-bottom", 50, 20, $containerWidth, $minWidth, 1);
+		align-items: start;
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+		}
+		.form__error {
+			color: white;
+			margin: rem(10) 0;
+		}
+		.form__line {
+		}
+	}
+
+	&__agreement {
+		font-size: rem(14);
+		line-height: 157.6%;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.8);
+		max-width: rem(500);
+		margin: 0 auto;
+	}
+}
+
+//========================================================================================================================================================

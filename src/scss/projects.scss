@@ -1,0 +1,98 @@
+//========================================================================================================================================================
+//Список проектов
+.projects-page {
+	@include adaptiveValue("padding-bottom", 110, 30, $containerWidth, $minWidth, 1);
+	&__grid {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 40, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__filters {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		flex-wrap: wrap;
+		li {
+			border-radius: rem(20);
+			background: $bgColorFilterProjects;
+			border: rem(1) solid $colorFilterProjects;
+			padding: rem(7) rem(20);
+			transition: all 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					border-color: $bgButtonOrange;
+				}
+			}
+			&._active {
+				background: $bgButtonOrange;
+				border-color: $bgButtonOrange;
+			}
+		}
+	}
+
+	&__filter {
+		font-size: rem(15);
+		line-height: 103.1%;
+		color: black;
+		transition: all 0.3s ease 0s;
+		._active & {
+			color: white;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 40, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__item {
+	}
+}
+.item-projects-page {
+	@include adaptiveValue("padding", 30, 15, $containerWidth, $minWidth, 1);
+	background: white;
+	box-shadow: 0px rem(9) rem(30) rgba(0, 0, 0, 0.05);
+	border-radius: rem(11);
+	display: grid;
+	grid-template-columns: 31.5% 1fr;
+	@include adaptiveValue("gap", 35, 20, $containerWidth, $minWidth, 1);
+	align-items: center;
+	@media (max-width: $mobile) {
+		grid-template-columns: 1fr;
+	}
+	&__image-ibg {
+		overflow: hidden;
+		height: 0;
+		padding-bottom: percent(244, 337);
+		border-radius: rem(5);
+		align-self: start;
+	}
+
+	&__body {
+	}
+
+	&__title {
+		font-weight: 800;
+		font-size: rem(19);
+		margin-bottom: rem(20);
+		line-height: 103.1%;
+		color: black;
+	}
+
+	&__text {
+		font-size: rem(16);
+		line-height: 169.1%;
+		color: $greyText;
+		@include adaptiveValue("margin-bottom", 26, 20, $containerWidth, $minWidth, 1);
+	}
+
+	&__button {
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+		}
+	}
+}
+
+//========================================================================================================================================================

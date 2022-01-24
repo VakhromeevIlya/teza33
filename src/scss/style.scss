@@ -43,6 +43,9 @@ $linkColor: #3188b9;
 $teamBg: #fbfbfb;
 $borderTableTotal: #f1f1f1;
 $textTableValue: #6b6b6b;
+$subtitleAbout: #575757;
+$colorFilterProjects: #dcdcdc;
+$bgColorFilterProjects: #fafafa;
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
 $minWidth: 320;
@@ -169,3 +172,7 @@ body {
 @import "documents";
 @import "team";
 @import "ready-boiler";
+@import "about";
+@import "made";
+@import "projects";
+@import "project-single";

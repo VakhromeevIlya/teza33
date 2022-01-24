@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Котельная мощностью 1000 кВт"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="up-block _dots">
+				<div class="up-block__container">
+					<div class="bread-crumbs">
+						<a href="home.html" class="bread-crumbs__label"><span>Главная страница</span></a>
+						<a href="home.html" class="bread-crumbs__label"><span>Проекты</span></a>
+						<span class="bread-crumbs__label bread-crumbs__label_current">Котельная мощностью 1000 кВт</span>
+					</div>
+					<div class="project-single-text">
+						<h1 class="project-single-text__title h1-title">Котельная мощностью 1000 кВт
+						</h1>
+						<div class="project-single-text__text">
+							Новая котельная для инструментального завода АО СИЗ «Твинтос». Для теплоснабжения производства и
+							офисных помещений. Выполнена в минимальные сроки, занимает небольшую площадь. Использование
+							современной системы автоматики позволяет гибко регулировать подачу тепла, тем самым экономя
+							энергоресурсы.
+						</div>
+						<button data-popup="#callback" type="button"
+							class="project-single-text__button button _icon-arrow-down">Оставить
+							заявку</button>
+					</div>
+				</div>
+			</section>
+			<section class="done-services">
+				<div class="done-services__container">
+					<h3 class="done-services__title">Оказанные услуги:</h3>
+					<ul class="done-services__list">
+						<li class="done-services__list-item">Проектирование котельных</li>
+						<li class="done-services__list-item">Комплектация и поставка оборудования</li>
+						<li class="done-services__list-item">Строительство котельной</li>
+						<li class="done-services__list-item">Пусконаладочные работы котельных</li>
+						<li class="done-services__list-item">Техническое обслуживание</li>
+					</ul>
+					<div class="done-services__images" data-gallery>
+						<div class="done-services__image-ibg">
+							<picture data-gallery-item data-src="@img/main/content-4.jpg"
+								data-sources='[{"srcset": "@img/main/content-4.webp","type":"image/webp"}]'
+								class="documents__image-ibg">
+								<source width="263" height="170" data-srcset="@img/main/content-4.webp" type="image/webp">
+								<img width="263" height="170" data-src="@img/main/content-4.jpg" alt="картинка" class="_lazy">
+							</picture>
+						</div>
+						<div class="done-services__image-ibg">
+							<picture data-gallery-item data-src="@img/main/content-5.jpg"
+								data-sources='[{"srcset": "@img/main/content-5.webp","type":"image/webp"}]'
+								class="documents__image-ibg">
+								<source width="263" height="170" data-srcset="@img/main/content-5.webp" type="image/webp">
+								<img width="263" height="170" data-src="@img/main/content-5.jpg" alt="картинка" class="_lazy">
+							</picture>
+						</div>
+						<div class="done-services__image-ibg">
+							<picture data-gallery-item data-src="@img/main/content-6.jpg"
+								data-sources='[{"srcset": "@img/main/content-6.webp","type":"image/webp"}]'
+								class="documents__image-ibg">
+								<source width="263" height="170" data-srcset="@img/main/content-6.webp" type="image/webp">
+								<img width="263" height="170" data-src="@img/main/content-6.jpg" alt="картинка" class="_lazy">
+							</picture>
+						</div>
+						<div class="done-services__image-ibg">
+							<picture data-gallery-item data-src="@img/main/content-7.jpg"
+								data-sources='[{"srcset": "@img/main/content-7.webp","type":"image/webp"}]'
+								class="documents__image-ibg">
+								<source width="263" height="170" data-srcset="@img/main/content-7.webp" type="image/webp">
+								<img width="263" height="170" data-src="@img/main/content-7.jpg" alt="картинка" class="_lazy">
+							</picture>
+						</div>
+					</div>
+					<h3 class="done-services__title">Отзыв клиента</h3>
+					<div class="done-services__review">
+						<div class="done-services__review-title">ООО «Макдоналдс»</div>
+						<div class="done-services__review-text">Равным образом дальнейшее развитие различных форм деятельности
+							представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении
+							поставленных задач. С другой стороны сложившаяся структура организации влечет за собой процесс
+							внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Идейные
+							соображения высшего порядка, а также сложившаяся структура организации в значительной степени
+							обуславливает создание модели развития.</div>
+					</div>
+				</div>
+			</section>
+			<section class="request">
+				<div class="request__container">
+					<div class="request__title">Оставить заявку на консультацию</div>
+					<div class="request__subtitle">Наш менеджер свяжется с Вами в течении 15 минут!</div>
+					<form action="#" class="request__form">
+						<div class="form__line">
+							<input autocomplete="off" type="text" name="form[]" data-error="*Введите корректные данные"
+								data-required placeholder="Ваше имя" class="input">
+						</div>
+						<div class="form__line">
+							<input autocomplete="off" type="tel" name="form[]" data-required
+								data-error="*Введите номер телефона" placeholder="Номер телефона"
+								class="callback-form__input input _phone" data-placeholder="Номер телефона">
+						</div>
+						<button type="submit" class="button button_dark _icon-arrow-down">Оставить заявку</button>
+					</form>
+					<div class="request__agreement">Оставляя заявку вы принимаете условия пользовательского соглашения и
+						согласны с политикой конфеденциальности сайта</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+//========================================================================================================================================================
+//Готовые котельные
+.made {
+	@include adaptiveValue("padding-bottom", 110, 30, $containerWidth, $minWidth, 1);
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr rem(360);
+		@include adaptiveValue("gap", 30, 15, $containerWidth, 768, 1);
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__filter {
+		order: 2;
+		position: relative;
+		align-self: start;
+		@media (max-width: $mobile) {
+			order: 1;
+		}
+	}
+	&__filter-title {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		gap: rem(10);
+		align-items: center;
+		&:not(:last-child) {
+			margin-bottom: em(20, 60);
+		}
+		&._spoller-active {
+			&::after {
+				transform: rotate(0deg);
+			}
+		}
+		&::after {
+			content: "\e902";
+			@extend %ic;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			font-size: rem(15);
+			transform: rotate(-90deg);
+			transition: all 0.3s ease 0s;
+		}
+	}
+	&__body {
+		order: 1;
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("gap", 30, 15, $containerWidth, $minWidth, 1);
+		@media (max-width: $mobile) {
+			order: 2;
+		}
+		.table-total {
+			&__table {
+				@include adaptiveValue("padding-bottom", 40, 15, $containerWidth, $minWidth, 1);
+			}
+			&__total {
+				@include adaptiveValue("padding-top", 40, 15, $containerWidth, $minWidth, 1);
+				border-top: rem(1) solid rgba(0, 0, 0, 0.12);
+			}
+		}
+		.submit-form {
+			border: 0;
+			padding: 0;
+			justify-content: stretch;
+			&__total-body {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: rem(10);
+			}
+			&__total-title {
+				margin-bottom: 0;
+			}
+			&__buttons {
+				display: flex;
+				align-items: center;
+				gap: rem(10);
+				flex-wrap: wrap;
+			}
+			&__more {
+				@media (max-width: $mobileSmall) {
+					width: 100%;
+					flex: 1 1 100%;
+				}
+			}
+		}
+	}
+
+	&__form {
+		@include adaptiveValue("padding", 40, 12, $containerWidth, $minWidth, 1);
+		grid-template-areas:
+			"power"
+			"length"
+			"quantity"
+			"type"
+			"maker"
+			"select"
+			"checkbox"
+			"submit";
+		grid-template-columns: 1fr;
+		@include adaptiveValue("gap", 50, 20, $containerWidth, $minWidth, 1);
+		background: #ffffff;
+		box-shadow: 0px rem(9) rem(30) rgba(0, 0, 0, 0.05);
+		border-radius: rem(11);
+		.form-calculator__line {
+			&[data-range-toggle-first] {
+				@include adaptiveValue("padding-top", 50, 20, $containerWidth, $minWidth, 1);
+				border-top: rem(1) solid rgba(0, 0, 0, 0.05);
+			}
+			&[data-range-toggle-last] {
+				@include adaptiveValue("padding-bottom", 50, 20, $containerWidth, $minWidth, 1);
+				border-bottom: rem(1) solid rgba(0, 0, 0, 0.05);
+			}
+			&[data-range-toggle-last],
+			&[data-range-toggle-first] {
+				@include adaptiveValue("margin-left", -40, -12, $containerWidth, $minWidth, 1);
+				@include adaptiveValue("margin-right", -40, -12, $containerWidth, $minWidth, 1);
+				.form-calculator__title,
+				.form-calculator__toggle {
+					@include adaptiveValue("padding-left", 40, 12, $containerWidth, $minWidth, 1);
+					@include adaptiveValue("padding-right", 40, 12, $containerWidth, $minWidth, 1);
+				}
+			}
+		}
+		.submit-form {
+			border: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+.body-made {
+	&__item {
+		background: #ffffff;
+		box-shadow: 0px rem(9) rem(30) rgba(0, 0, 0, 0.05);
+		border-radius: rem(11);
+		@include adaptiveValue("padding", 50, 20, $containerWidth, $minWidth, 1);
+		.table-total__item {
+			* {
+				color: $greyText;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 800;
+		font-size: rem(19);
+		line-height: 103.1%;
+		margin-bottom: rem(20);
+	}
+}
+
+//========================================================================================================================================================

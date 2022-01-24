@@ -33,38 +33,6 @@
 		}
 	}
 }
-.aside-building {
-	&__item {
-		background: $advantagesItemRed;
-		min-height: rem(100);
-	}
-
-	&__number {
-		font-weight: 800;
-		@include adaptiveValue("font-size", 128, 70, $containerWidth, $minWidth, 1);
-		line-height: 122.6%;
-		color: $advantagesNumberRed;
-	}
-
-	&__title {
-		font-weight: 700;
-		font-size: rem(18);
-		line-height: 130%;
-		color: #ffffff;
-		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		margin-top: rem(-55);
-		@include adaptiveValue("padding-left", 20, 15, $containerWidth, $minWidth, 1);
-		@include adaptiveValue("padding-right", 20, 15, $containerWidth, $minWidth, 1);
-		@include adaptiveValue("padding-bottom", 40, 15, $containerWidth, $minWidth, 1);
-		max-width: 60%;
-		@media (max-width: $mobile) {
-			max-width: 75%;
-		}
-		@media (max-width: $mobileSmall) {
-			max-width: 100%;
-		}
-	}
-}
 //========================================================================================================================================================
 //Calculator
 .calculator {
@@ -80,171 +48,48 @@
 		text-align: center;
 		@include adaptiveValue("margin-bottom", 70, 20, $containerWidth, $minWidth, 1);
 	}
-}
-.form-calculator {
-	display: grid;
-	&__image-ibg {
-		cursor: pointer;
-	}
-	@include adaptiveValue("margin-bottom", 60, 20, $containerWidth, $minWidth, 1);
-	grid-template-areas:
-		"power power img img"
-		"quantity length img img"
-		"type maker img img"
-		"checkbox select submit submit";
-	grid-auto-rows: auto;
-	@include adaptiveValue("row-gap", 70, 20, $containerWidth, $minWidth, 1);
-	@include adaptiveValue("column-gap", 30, 20, $containerWidth, $minWidth, 1);
-	grid-template-columns: repeat(4, 1fr);
-	@media (max-width: $tablet) {
+	&__form {
+		@include adaptiveValue("margin-bottom", 60, 20, $containerWidth, $minWidth, 1);
 		grid-template-areas:
-			"power quantity length"
-			"type maker select"
-			"checkbox submit submit"
-			"img img img";
-		grid-template-columns: repeat(3, 1fr);
-	}
-	@media (max-width: em(850)) {
-		grid-template-areas:
-			"power power"
-			"length quantity"
-			"type maker"
-			"select select"
-			"checkbox checkbox"
-			"submit submit"
-			"img img";
-		grid-template-columns: repeat(2, 1fr);
-	}
-	@media (max-width: em(550)) {
-		grid-template-areas:
-			"power"
-			"length"
-			"quantity"
-			"type"
-			"maker"
-			"select"
-			"checkbox"
-			"submit"
-			"img";
-		grid-template-columns: 1fr;
-	}
-	&__line {
-		position: relative;
-		&_power {
-			grid-area: power;
-			.form-calculator__values {
-				margin-top: rem(22);
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				gap: rem(10);
-				div {
-					font-size: rem(14);
-					line-height: 103.1%;
-					color: $calculatorTitle;
-				}
-			}
+			"power power img img"
+			"quantity length img img"
+			"type maker img img"
+			"checkbox select submit submit";
+		grid-auto-rows: auto;
+		@include adaptiveValue("row-gap", 70, 20, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("column-gap", 30, 20, $containerWidth, $minWidth, 1);
+		grid-template-columns: repeat(4, 1fr);
+		@media (max-width: $tablet) {
+			grid-template-areas:
+				"power quantity length"
+				"type maker select"
+				"checkbox submit submit"
+				"img img img";
+			grid-template-columns: repeat(3, 1fr);
 		}
-		&_power,
-		&_quantity,
-		&_length {
-			.form-calculator__title {
-				@include adaptiveValue("margin-bottom", 70, 40, $containerWidth, $minWidth, 1);
-			}
+		@media (max-width: em(850)) {
+			grid-template-areas:
+				"power power"
+				"length quantity"
+				"type maker"
+				"select select"
+				"checkbox checkbox"
+				"submit submit"
+				"img img";
+			grid-template-columns: repeat(2, 1fr);
 		}
-
-		&_quantity {
-			grid-area: quantity;
-		}
-
-		&_length {
-			grid-area: length;
-		}
-
-		&_type {
-			grid-area: type;
-		}
-		&_type,
-		&_maker {
-			.form-calculator__title {
-				@include adaptiveValue("margin-bottom", 30, 20, $containerWidth, $minWidth, 1);
-			}
-		}
-
-		&_maker {
-			grid-area: maker;
-		}
-
-		&_checkbox {
-			grid-area: checkbox;
-			.checkbox {
-				@media (max-width: em(850)) {
-					flex-direction: row;
-					flex-wrap: wrap;
-				}
-			}
-		}
-
-		&_select {
-			grid-area: select;
-			.form-calculator__title {
-				margin-bottom: rem(15);
-			}
-		}
-
-		&_img {
-			grid-area: img;
-			img {
-				max-width: 100%;
-				width: auto;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-			@media (max-width: $tablet) {
-				padding-bottom: 79%;
-			}
-		}
-
-		&_submit {
-			grid-area: submit;
-		}
-	}
-
-	&__title {
-		font-weight: 700;
-		line-height: 103.1%;
-		color: $calculatorTitle;
-	}
-	&__value {
-		transition: color 0.3s ease 0s;
-		font-weight: 700;
-		font-size: rem(19);
-		line-height: 103.1%;
-		color: $rangeToggle;
-		&._active {
-			color: $bgButtonOrange;
-		}
-	}
-
-	&__toggle {
-		display: flex;
-		align-items: center;
-		gap: rem(25);
-	}
-
-	&__image-ibg {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-	}
-
-	&__total {
-		@media (min-width: $mobileSmall) {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+		@media (max-width: em(550)) {
+			grid-template-areas:
+				"power"
+				"length"
+				"quantity"
+				"type"
+				"maker"
+				"select"
+				"checkbox"
+				"submit"
+				"img";
+			grid-template-columns: 1fr;
 		}
 	}
 }

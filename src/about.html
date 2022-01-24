@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"О компании"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="up-block _dots">
+				<div class="up-block__container">
+					<div class="bread-crumbs">
+						<a href="home.html" class="bread-crumbs__label"><span>Главная страница</span></a>
+						<span class="bread-crumbs__label bread-crumbs__label_current">О компании</span>
+					</div>
+					<div class="about">
+						<div class="about__grid">
+							<div data-da=".about__body,48,2" class="about__image-ibg" data-gallery>
+								<picture data-gallery-item data-src="@img/about/about-img.jpg"
+									data-sources='[{"srcset": "@img/about/about-img.webp","type":"image/webp"}]'>
+									<source width="391" height="603" data-srcset="@img/about/about-img.webp" type="image/webp">
+									<img width="391" height="603" class="_lazy" data-src="@img/about/about-img.jpg"
+										alt="рабочий на предприятие">
+								</picture>
+							</div>
+							<div class="about__body">
+								<h2 class="about__subtitle">О КОМПАНИИ</h2>
+								<h1 class="about__title h1-title">ОАО Теза-групп</h1>
+								<div class="about__text">
+									<p>
+										Компания Миг-Плюс предлагает проектирование, монтаж и строительство котельных. Наша
+										организация начала свою деятельность в 1997 году. Мы работаем в Москве, Московской области
+										и
+										в других регионах России.
+									</p>
+
+									<p>
+										Осуществляем работу «под ключ» – от получения технических условий и проектирования до
+										сдачи в
+										эксплуатацию и сервисного обслуживания.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="about-row">
+				<div class="about-row__container">
+					<div class="about-row__grid aside-building">
+						<div class="aside-building__item">
+							<div class="aside-building__number">200</div>
+							<div class="aside-building__title">
+								Более 200 смонтированных котельных
+							</div>
+						</div>
+						<div class="aside-building__item">
+							<div class="aside-building__number">150</div>
+							<div class="aside-building__title">
+								Более 150 объектов
+								на сервисном обслуживании
+							</div>
+						</div>
+						<div class="aside-building__item">
+							<div class="aside-building__number">200</div>
+							<div class="aside-building__title">
+								Более 200 смонтированных котельных
+							</div>
+						</div>
+						<div class="aside-building__item">
+							<div class="aside-building__number">150</div>
+							<div class="aside-building__title">
+								Более 150 объектов
+								на сервисном обслуживании
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			@@include('html/_partners.htm',{})
+			<section class="about-text">
+				<div class="about-text__container">
+					<p>
+						На сегодняшний день, нами построено более 150 котельных и обслуживается более 200 объектов
+						теплогазоснабжения, общей тепловой мощностью более 300 МВт. В нашей компании работает 80 сотрудников.
+					</p>
+
+					<p>
+						Мы работаем в Москве и Южном направлении Московской области, в Тульской, Калужской, Ярославской,
+						Брянской,
+						Тверской, Нижегородской, Рязанской, Новосибирской областях.
+					</p>
+
+					<p>
+						«Миг-Плюс» имеет большой опыт , свою производственную базу и высококлассных специалистов для
+						организации
+						и
+						проведения комплекса работ от проектных до эксплуатационных.
+					</p>
+
+					<p>
+						В своей работе мы руководствуемся стандартами, направленными на сокращение временных, материальных
+						издержек
+						нашими клиентами.
+					</p>
+				</div>
+			</section>
+			@@include('html/_projects.htm',{
+			"title": "Наши проекты"
+			})
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

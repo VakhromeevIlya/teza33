@@ -18,6 +18,11 @@
 ._dots {
 	background: url("@img/main/dots.svg") 0 0;
 }
+.showmore {
+	display: flex;
+	justify-content: center;
+	@include adaptiveValue("padding-top", 40, 0, $containerWidth, $minWidth, 1);
+}
 .bread-crumbs {
 	gap: rem(8);
 	display: flex;
@@ -360,3 +365,216 @@
 	}
 }
 //========================================================================================================================================================
+//Блоки с цифрами
+.aside-building {
+	&__item {
+		background: $advantagesItemRed;
+		min-height: rem(100);
+	}
+
+	&__number {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 128, 70, $containerWidth, $minWidth, 1);
+		line-height: 122.6%;
+		color: $advantagesNumberRed;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: 130%;
+		color: #ffffff;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		margin-top: rem(-55);
+		@include adaptiveValue("padding-left", 20, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-right", 20, 15, $containerWidth, $minWidth, 1);
+		@include adaptiveValue("padding-bottom", 40, 15, $containerWidth, $minWidth, 1);
+		max-width: 60%;
+		@media (max-width: $mobile) {
+			max-width: 75%;
+		}
+		@media (max-width: $mobileSmall) {
+			max-width: 100%;
+		}
+	}
+}
+//Таблица с общей суммой
+.table-total {
+	&__grid {
+		display: grid;
+		&_ready {
+			@include adaptiveValue("padding-top", 70, 30, $containerWidth, $minWidth, 1);
+			@include adaptiveValue("padding-bottom", 70, 30, $containerWidth, $minWidth, 1);
+			grid-template-columns: 1fr percent(456, 1140);
+			@include adaptiveValue("column-gap", 77, 20, $containerWidth, 992, 1);
+			border-bottom: rem(1) solid $borderTableTotal;
+			row-gap: rem(20);
+			@media (max-width: $mobile) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	&__table {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(5);
+		flex-wrap: wrap;
+	}
+
+	&__title {
+		font-weight: 700;
+		color: black;
+		line-height: 110%;
+		flex: 1 1 auto;
+	}
+
+	&__value {
+		line-height: 110%;
+		text-align: right;
+		color: $textTableValue;
+	}
+
+	&__total {
+		height: 100%;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+	}
+}
+//Форма калькулятора
+.form-calculator {
+	display: grid;
+	&__image-ibg {
+		cursor: pointer;
+	}
+	&__line {
+		position: relative;
+		&_power {
+			grid-area: power;
+			.form-calculator__values {
+				margin-top: rem(22);
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: rem(10);
+				div {
+					font-size: rem(14);
+					line-height: 103.1%;
+					color: $calculatorTitle;
+				}
+			}
+		}
+		&_power,
+		&_quantity,
+		&_length {
+			.form-calculator__title {
+				@include adaptiveValue("margin-bottom", 70, 40, $containerWidth, $minWidth, 1);
+			}
+		}
+
+		&_quantity {
+			grid-area: quantity;
+		}
+
+		&_length {
+			grid-area: length;
+		}
+
+		&_type {
+			grid-area: type;
+		}
+		&_type,
+		&_maker {
+			.form-calculator__title {
+				@include adaptiveValue("margin-bottom", 30, 20, $containerWidth, $minWidth, 1);
+			}
+		}
+
+		&_maker {
+			grid-area: maker;
+		}
+
+		&_checkbox {
+			grid-area: checkbox;
+			.checkbox {
+				@media (max-width: em(850)) {
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+			}
+		}
+
+		&_select {
+			grid-area: select;
+			.form-calculator__title {
+				margin-bottom: rem(15);
+			}
+		}
+
+		&_img {
+			grid-area: img;
+			img {
+				max-width: 100%;
+				width: auto;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			@media (max-width: $tablet) {
+				padding-bottom: 79%;
+			}
+		}
+
+		&_submit {
+			grid-area: submit;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		line-height: 103.1%;
+		color: $calculatorTitle;
+	}
+	&__value {
+		transition: color 0.3s ease 0s;
+		font-weight: 700;
+		font-size: rem(19);
+		line-height: 103.1%;
+		color: $rangeToggle;
+		&._active {
+			color: $bgButtonOrange;
+		}
+	}
+	&__value-2 {
+		justify-self: end;
+	}
+
+	&__toggle {
+		display: grid;
+		grid-template-columns: 1fr rem(74) 1fr;
+		align-items: center;
+		gap: rem(25);
+	}
+
+	&__image-ibg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__total {
+		@media (min-width: $mobileSmall) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
