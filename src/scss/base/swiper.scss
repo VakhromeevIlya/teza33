@@ -1,3 +1,4 @@
+@import "mixins";
 .swiper {
 	overflow: hidden;
 }
@@ -32,4 +33,29 @@
 }
 .swiper-button-lock {
 	display: none !important;
+}
+.swiper-lazy-preloader {
+	width: rem(42);
+	height: rem(42);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: rem(-21);
+	margin-top: rem(-21);
+	z-index: 10;
+	transform-origin: 50%;
+	animation: swiper-preloader-spin 1s infinite linear;
+	box-sizing: border-box;
+	border: rem(4) solid black;
+	border-radius: 50%;
+	border-top-color: transparent;
+	&_white {
+		border: rem(4) solid white;
+		border-top-color: transparent;
+	}
+}
+@keyframes swiper-preloader-spin {
+	100% {
+		transform: rotate(360deg);
+	}
 }

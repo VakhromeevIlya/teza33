@@ -46,9 +46,6 @@
 		flex-direction: column;
 		@include adaptiveValue("gap", 40, 20, $containerWidth, $minWidth, 1);
 	}
-
-	&__item {
-	}
 }
 .item-projects-page {
 	@include adaptiveValue("padding", 30, 15, $containerWidth, $minWidth, 1);
@@ -68,9 +65,6 @@
 		padding-bottom: percent(244, 337);
 		border-radius: rem(5);
 		align-self: start;
-	}
-
-	&__body {
 	}
 
 	&__title {

@@ -35,6 +35,7 @@
 	}
 	&__item {
 		display: flex;
+		flex-wrap: wrap;
 		column-gap: rem(20);
 		row-gap: rem(10);
 		span {

@@ -36,16 +36,16 @@
 						<div class="building__aside aside-building">
 							<div class="aside-building__item">
 								<div class="aside-building__number">200</div>
-								<div class="aside-building__title">
+								<p class="aside-building__title">
 									Более 200 смонтированных котельных
-								</div>
+								</p>
 							</div>
 							<div class="aside-building__item">
 								<div class="aside-building__number">150</div>
-								<div class="aside-building__title">
+								<p class="aside-building__title">
 									Более 150 объектов
 									на сервисном обслуживании
-								</div>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -57,45 +57,45 @@
 					<form action="#" class="calculator__form form-calculator">
 						<div data-range data-start="1.00" data-tooltips="2"
 							class="form-calculator__line form-calculator__line_power">
-							<div class="form-calculator__title">Мощность котельной, МВт</div>
+							<h3 class="form-calculator__title">Мощность котельной, МВт</h3>
 							<div data-range-item class="form-calculator__item-range"></div>
 							<div class="form-calculator__values">
-								<div data-from>0.50</div>
-								<div data-to>3.00</div>
+								<p data-from>0.50</p>
+								<p data-to>3.00</p>
 							</div>
 						</div>
 						<div data-range data-start="3" data-tooltips="0"
 							class="form-calculator__line form-calculator__line_quantity">
-							<div class="form-calculator__title">Кол-во котлов, шт</div>
+							<h3 class="form-calculator__title">Кол-во котлов, шт</h3>
 							<div data-range-item class="form-calculator__item-range"></div>
 							<div class="form-calculator__values">
-								<div hidden data-from>0</div>
-								<div hidden data-to>10</div>
+								<p hidden data-from>0</p>
+								<p hidden data-to>10</p>
 							</div>
 						</div>
 						<div data-range data-start="18" data-tooltips="0"
 							class="form-calculator__line form-calculator__line_length">
-							<div class="form-calculator__title">Дымовая труба, м</div>
+							<h3 class="form-calculator__title">Дымовая труба, м</h3>
 							<div data-range-item class="form-calculator__item-range"></div>
 							<div class="form-calculator__values">
-								<div hidden data-from>0</div>
-								<div hidden data-to>25</div>
+								<p hidden data-from>0</p>
+								<p hidden data-to>25</p>
 							</div>
 						</div>
 						<div data-range-toggle class="form-calculator__line form-calculator__line_type">
-							<div class="form-calculator__title">Тип топлива</div>
+							<h3 class="form-calculator__title">Тип топлива</h3>
 							<div class="form-calculator__toggle">
-								<div class="form-calculator__value-1 form-calculator__value">Газ</div>
+								<p class="form-calculator__value-1 form-calculator__value">Газ</p>
 								<button type="button" data-range-item class="form-calculator__item-range"></button>
-								<div class="form-calculator__value-2 form-calculator__value">Дизель</div>
+								<p class="form-calculator__value-2 form-calculator__value">Дизель</p>
 							</div>
 						</div>
 						<div data-range-toggle class="form-calculator__line form-calculator__line_maker">
-							<div class="form-calculator__title">Производитель котлов</div>
+							<h3 class="form-calculator__title">Производитель котлов</h3>
 							<div class="form-calculator__toggle">
-								<div class="form-calculator__value-1 form-calculator__value">Импорт</div>
+								<p class="form-calculator__value-1 form-calculator__value">Импорт</p>
 								<button type="button" data-range-item class="form-calculator__item-range"></button>
-								<div class="form-calculator__value-2 form-calculator__value">Россия</div>
+								<p class="form-calculator__value-2 form-calculator__value">Россия</p>
 							</div>
 						</div>
 						<div class="form-calculator__line form-calculator__line_checkbox">
@@ -122,7 +122,7 @@
 							</div>
 						</div>
 						<div class="form-calculator__line form-calculator__line_select">
-							<div class="form-calculator__title">Тип здания</div>
+							<h3 class="form-calculator__title">Тип здания</h3>
 							<select name="form[]" class="calculator">
 								<option value="1" selected>Блочно-модульная котельная</option>
 								<option value="2">Пункт №2</option>
@@ -141,16 +141,16 @@
 						<div class="form-calculator__line form-calculator__line_submit">
 							<div class="form-calculator__total submit-form">
 								<div class="submit-form__total-body">
-									<div class="submit-form__total-title">Стоимость котельной:</div>
-									<div class="submit-form__total-price">13 892 350 ₽</div>
+									<h3 class="submit-form__total-title">Стоимость котельной:</h3>
+									<h4 class="submit-form__total-price">13 892 350 ₽</h4>
 								</div>
 								<button type="submit" class="submit-form__submit button">Получить расчет</button>
 							</div>
 						</div>
 					</form>
-					<div class="calculator__note">Пример расчета котельной носит информационный характер и не является
+					<p class="calculator__note">Пример расчета котельной носит информационный характер и не является
 						публичной офертой
-					</div>
+					</p>
 				</div>
 			</section>
 			@@include('html/_projects.htm',{

@@ -34,7 +34,8 @@ const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fonstStyle);
 //Создание webp изображений
 const webp = gulp.series(reset, images, otfToTtf, ttfToWoff, fonstStyle);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
-const devTasks = gulp.parallel(fonts, gitignore);
+const devTasks = gulp.series(fonts,gitignore,images);
+//gulp.parallel(fonts, gitignore);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
 const buildTasks = gulp.series(fonts, js, gulp.parallel(html, css, images, gitignore), jsp);
 

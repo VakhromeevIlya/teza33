@@ -55,15 +55,13 @@
 	&__options {
 		color: $calculatorTitle;
 		position: absolute;
-		top: percent(23, 44);
-		border-radius: 0 0 rem(24) rem(24);
+		top: 110%;
+		border-radius: rem(24);
 		min-width: 100%;
 		left: 0;
 		background-color: #fff;
-		border-top: 0;
 		border: rem(1) solid $rangeBg;
-		border-top: 0;
-		padding: rem(30) 0 rem(10) 0;
+		padding: rem(10) rem(5);
 		z-index: -1;
 	}
 	// .select__scroll
@@ -86,6 +84,7 @@
 		text-align: left;
 		cursor: pointer;
 		padding: rem(5) rem(15);
+		border-radius: rem(24);
 		color: inherit;
 		&._select-selected {
 			background-color: #eee;

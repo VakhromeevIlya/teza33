@@ -127,7 +127,6 @@
 	background: url("@img/main/dots.svg") 0 0;
 	@include adaptiveValue("padding-top", 95, 30, $containerWidth, $minWidth, 1);
 	@include adaptiveValue("padding-bottom", 95, 30, $containerWidth, $minWidth, 1);
-
 	&__up {
 		position: relative;
 	}
@@ -189,6 +188,7 @@
 		min-height: rem(212);
 		border-radius: rem(8);
 		overflow: hidden;
+		border: rem(1) solid $swiperLazyBorder;
 		@media (max-width: $mobileSmall) {
 			width: rem(290);
 		}
@@ -280,6 +280,9 @@
 		line-height: 157.6%;
 		color: $fullscreenSubtitle;
 		flex: 1 1 auto;
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
 	}
 
 	&__button {
@@ -577,4 +580,8 @@
 			grid-template-columns: 1fr 1fr;
 		}
 	}
+}
+//lazyloading
+._lazy:not(._lazy-loaded) {
+	background: url("@img/loading.gif") center / rem(50) rem(50) no-repeat transparent;
 }

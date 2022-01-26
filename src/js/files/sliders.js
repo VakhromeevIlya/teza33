@@ -17,7 +17,7 @@ EffectFade, Lazy, Manipulation
 
 // Стили Swiper
 // Базовые стили
-import "../../scss/base/swiper.scss";
+//import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
@@ -58,6 +58,11 @@ function initSliders() {
 				slidesPerView: "auto",
 				speed: 500,
 				loop: loop,
+				preloadImages: false,
+				lazy: {
+					checkInView: true,
+				},
+				watchSlidesProgress: true,
 				watchOverflow: true,
 				// Arrows
 				navigation: {
@@ -72,14 +77,17 @@ function initSliders() {
 		new Swiper('.partners__slider', {
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation, Pagination],
+			modules: [Navigation, Pagination, Lazy],
 			observer: true,
 			observeParents: true,
 			slidesPerView: "auto",
 			speed: 500,
-			//touchRatio: 0,
-			//simulateTouch: false,
 			loop: true,
+			preloadImages: false,
+			lazy: {
+				checkInView: true,
+			},
+			watchSlidesProgress: true,
 			// Dotts
 			pagination: {
 				el: '.partners__dots',
@@ -94,42 +102,8 @@ function initSliders() {
 		});
 	}
 }
-// Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
-function initSlidersScroll() {
-	// Добавление классов слайдера
-	// при необходимости отключить
-	bildSliders();
-
-	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
-	if (sliderScrollItems.length > 0) {
-		for (let index = 0; index < sliderScrollItems.length; index++) {
-			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
-			const sliderScroll = new Swiper(sliderScrollItem, {
-				observer: true,
-				observeParents: true,
-				direction: 'vertical',
-				slidesPerView: 'auto',
-				freeMode: {
-					enabled: true,
-				},
-				scrollbar: {
-					el: sliderScrollBar,
-					draggable: true,
-					snapOnRelease: false
-				},
-				mousewheel: {
-					releaseOnEdges: true,
-				},
-			});
-			sliderScroll.scrollbar.updateSize();
-		}
-	}
-}
 
 window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
-	// Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
-	//initSlidersScroll();
 });
