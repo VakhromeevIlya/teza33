@@ -43,13 +43,14 @@ function initSliders() {
 	// Добавление классов слайдера
 	// при необходимости отключить
 	bildSliders();
-
+	const breakpoint = window.matchMedia( '(max-width:75em)' );
 	// Перечень слайдеров
 	if (document.querySelector('.projects__slider')) {
+		let projectSlider;
 		const slides = document.querySelectorAll('.projects__slide');
 		const loop = slides.length > 3;
-		function createProject(loop) {
-			new Swiper('.projects__slider', {
+		function createProject(loop,loadSlides,loadAmount) {
+			projectSlider = new Swiper('.projects__slider', {
 				// Подключаем модули слайдера
 				// для конкретного случая
 				modules: [Navigation, Lazy],
@@ -61,8 +62,8 @@ function initSliders() {
 				preloadImages: false,
 				lazy: {
 					checkInView: true,
-					loadPrevNext: true,
-					loadPrevNextAmount: 2,
+					loadPrevNext: loadSlides,
+					loadPrevNextAmount: loadAmount,
 				},
 				watchSlidesProgress: true,
 				watchOverflow: true,
@@ -72,32 +73,24 @@ function initSliders() {
 					prevEl: '.projects__arrows_prev',
 				},
 				resizeObserver: false,
-				breakpoints: {
-					'@0.00': {
-						lazy: {
-							checkInView: true,
-							loadPrevNext: false,
-							loadPrevNextAmount: 0,
-						},
-					},
-					'@0.75': {
-						lazy: {
-							checkInView: true,
-							loadPrevNext: true,
-							loadPrevNextAmount: 1,
-						},
-					},
-					'@1.50': {
-						lazy: {
-							checkInView: true,
-							loadPrevNext: true,
-							loadPrevNextAmount: 2,
-						},
-					},
-				},
 			});
 		}
-		createProject(loop);
+		const breakpointChecker = function() {
+			// if larger viewport and multi-row layout needed
+			if ( breakpoint.matches === true ) {
+				// clean up old instances and inline styles when available
+				if ( projectSlider !== undefined ) projectSlider.destroy( true, true );
+				// or/and do nothing
+				return createProject(loop,false,0);
+			// else if a small viewport and single column layout needed
+			} else if ( breakpoint.matches === false ) {
+				// fire small viewport version of swiper
+				if ( projectSlider !== undefined ) projectSlider.destroy( true, true );
+				return createProject(loop,true,2);
+			}
+		};
+		breakpoint.addListener(breakpointChecker);
+		breakpointChecker();
 	}
 	if (document.querySelector('.partners__slider')) {
 		new Swiper('.partners__slider', {
