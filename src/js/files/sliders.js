@@ -61,6 +61,8 @@ function initSliders() {
 				preloadImages: false,
 				lazy: {
 					checkInView: true,
+					loadPrevNext: true,
+					loadPrevNextAmount: 2,
 				},
 				watchSlidesProgress: true,
 				watchOverflow: true,
@@ -68,6 +70,30 @@ function initSliders() {
 				navigation: {
 					nextEl: '.projects__arrows_next',
 					prevEl: '.projects__arrows_prev',
+				},
+				resizeObserver: false,
+				breakpoints: {
+					'@0.00': {
+						lazy: {
+							checkInView: true,
+							loadPrevNext: false,
+							loadPrevNextAmount: 0,
+						},
+					},
+					'@0.75': {
+						lazy: {
+							checkInView: true,
+							loadPrevNext: true,
+							loadPrevNextAmount: 1,
+						},
+					},
+					'@1.50': {
+						lazy: {
+							checkInView: true,
+							loadPrevNext: true,
+							loadPrevNextAmount: 2,
+						},
+					},
 				},
 			});
 		}
