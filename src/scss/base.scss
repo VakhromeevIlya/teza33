@@ -18,6 +18,12 @@
 // Стили блока "показать еще"
 // @import "base/showmore";
 
+//Галерея / gallery
+@import 'libs/gallery/lightgallery';
+@import 'libs/gallery/lg-zoom';
+@import 'libs/gallery/lg-fullscreen';
+@import 'libs/gallery/lg-rotate';
+
 // Стили для полноэкранного блока
 @import "base/fullscreen";
 

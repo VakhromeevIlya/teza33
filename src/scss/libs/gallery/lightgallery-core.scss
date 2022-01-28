@@ -49,23 +49,23 @@
 	.lg-hide-items {
 		.lg-prev {
 			opacity: 0;
-			@include translate3d(-10px, 0, 0);
+			@include translate3d(rem(-10), 0, 0);
 		}
 
 		.lg-next {
 			opacity: 0;
-			@include translate3d(10px, 0, 0);
+			@include translate3d(rem(10), 0, 0);
 		}
 
 		.lg-toolbar {
 			opacity: 0;
-			@include translate3d(0, -10px, 0);
+			@include translate3d(0, rem(-10), 0);
 		}
 
 		&.lg-hide-sub-html {
 			.lg-sub-html {
 				opacity: 0;
-				@include translate3d(0, 20px, 0);
+				@include translate3d(0, rem(20), 0);
 			}
 		}
 	}

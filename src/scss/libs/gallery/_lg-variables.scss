@@ -11,7 +11,7 @@ $lg-icon-hover-color: #fff !default;
 
 // counter
 $lg-counter-color: #e6e6e6 !default;
-$lg-counter-font-size: 16px !default;
+$lg-counter-font-size: rem(16) !default;
 
 // Next prev icons
 $lg-next-prev-bg: $lg-icon-bg !default;
@@ -26,7 +26,7 @@ $lg-toolbar-icon-disabled-opacity: 0.75 !default;
 // autoplay progress bar
 $lg-progress-bar-bg: #333 !default;
 $lg-progress-bar-active-bg: $lg-theme-highlight !default;
-$lg-progress-bar-height: 5px !default;
+$lg-progress-bar-height: rem(5) !default;
 
 // paths
 $lg-path-fonts: "../fonts" !default;
@@ -43,7 +43,7 @@ $lg-sub-html-color: #eee !default;
 $lg-thumb-toggle-bg: #0d0a0a !default;
 $lg-thumb-toggle-color: $lg-icon-color !default;
 $lg-thumb-bg: #0d0a0a !default;
-$lg-thumb-container-height: 100px;
+$lg-thumb-container-height: rem(100);
 
 // Pager
 

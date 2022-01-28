@@ -10,9 +10,9 @@
 	color: $lg-next-prev-color;
 	cursor: pointer;
 	display: block;
-	font-size: 22px;
-	margin-top: -10px;
-	padding: 8px 10px 9px;
+	font-size: rem(22);
+	margin-top: rem(-10);
+	padding: rem(8) rem(10) rem(9);
 	position: absolute;
 	top: 50%;
 	z-index: $zindex-controls;
@@ -33,7 +33,7 @@
 }
 
 .lg-next {
-	right: 20px;
+	right: rem(20);
 
 	&:before {
 		content: "\e095";
@@ -41,7 +41,7 @@
 }
 
 .lg-prev {
-	left: 20px;
+	left: rem(20);
 
 	&:after {
 		content: "\e094";
@@ -54,7 +54,7 @@
 	}
 
 	50% {
-		left: -30px;
+		left: rem(-30);
 	}
 
 	100% {
@@ -68,7 +68,7 @@
 	}
 
 	50% {
-		left: 30px;
+		left: rem(30);
 	}
 
 	100% {
@@ -107,12 +107,12 @@
 		color: $lg-toolbar-icon-color;
 		cursor: pointer;
 		float: right;
-		font-size: 24px;
-		height: 47px;
-		line-height: 27px;
-		padding: 10px 0;
+		font-size: rem(24);
+		height: rem(47);
+		line-height: rem(27);
+		padding: rem(10) 0;
 		text-align: center;
-		width: 50px;
+		width: rem(50);
 		text-decoration: none !important;
 		outline: medium none;
 		will-change: color;
@@ -121,7 +121,7 @@
 		border: none;
 		box-shadow: none;
 		&.lg-icon-18 {
-			font-size: 18px;
+			font-size: rem(18);
 		}
 		&:hover {
 			color: $lg-toolbar-icon-hover-color;
@@ -134,7 +134,7 @@
 		}
 	}
 	.lg-maximize {
-		font-size: 22px;
+		font-size: rem(22);
 		&:after {
 			content: "\e90a";
 		}
@@ -150,8 +150,8 @@
 // lightGallery title
 .lg-sub-html {
 	color: $lg-sub-html-color;
-	font-size: 16px;
-	padding: 10px 40px;
+	font-size: rem(16);
+	padding: rem(10) rem(40);
 	text-align: center;
 	z-index: $zindex-subhtml;
 	opacity: 0;
@@ -159,13 +159,13 @@
 
 	h4 {
 		margin: 0;
-		font-size: 13px;
+		font-size: rem(13);
 		font-weight: bold;
 	}
 
 	p {
-		font-size: 12px;
-		margin: 5px 0 0;
+		font-size: rem(12);
+		margin: rem(5) 0 0;
 	}
 	a {
 		color: inherit;
@@ -185,7 +185,7 @@
 }
 
 .lg-error-msg {
-	font-size: 14px;
+	font-size: rem(14);
 	color: #999;
 }
 
@@ -194,9 +194,9 @@
 	color: $lg-icon-color;
 	display: inline-block;
 	font-size: $lg-counter-font-size;
-	padding-left: 20px;
-	padding-top: 12px;
-	height: 47px;
+	padding-left: rem(20);
+	padding-top: rem(12);
+	height: rem(47);
 	vertical-align: middle;
 }
 
