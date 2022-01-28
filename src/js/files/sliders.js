@@ -89,7 +89,6 @@ function initSliders() {
 				return createProject(loop,true,2);
 			}
 		};
-		breakpoint.addListener(breakpointChecker);
 		breakpointChecker();
 	}
 	if (document.querySelector('.partners__slider')) {
