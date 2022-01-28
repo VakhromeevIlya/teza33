@@ -64,6 +64,7 @@ function initSliders() {
 					checkInView: true,
 					loadPrevNext: loadSlides,
 					loadPrevNextAmount: loadAmount,
+					loadOnTransitionStart: true,
 				},
 				watchSlidesProgress: true,
 				watchOverflow: true,
@@ -81,12 +82,22 @@ function initSliders() {
 				// clean up old instances and inline styles when available
 				if ( projectSlider !== undefined ) projectSlider.destroy( true, true );
 				// or/and do nothing
-				return createProject(loop,false,0);
+				createProject(loop,false,0);
 			// else if a small viewport and single column layout needed
 			} else if ( breakpoint.matches === false ) {
 				// fire small viewport version of swiper
 				if ( projectSlider !== undefined ) projectSlider.destroy( true, true );
-				return createProject(loop,true,2);
+				createProject(loop,true,2);
+				projectSlider.on('realIndexChange', function() {
+					if(this.realIndex + 1 == this.slides.length / 3) {
+						this.slides.forEach((item,i) => {
+							if(!item.querySelector('img.swiper-lazy-loaded')) {
+								this.lazy.loadInSlide(i);
+							}
+						})
+						projectSlider.off('realIndexChange');
+					}
+				});
 			}
 		};
 		breakpointChecker();
