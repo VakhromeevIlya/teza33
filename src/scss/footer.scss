@@ -1,7 +1,7 @@
 //====================================================================================================
 .footer {
 	@include adaptiveValue("padding-top", 60, 30, $containerWidth, $minWidth, 1);
-	@include adaptiveValue("padding-bottom", 210, 30, $containerWidth, $minWidth, 1);
+	@include adaptiveValue("padding-bottom", 60, 30, $containerWidth, $minWidth, 1);
 	background-color: #fff;
 	position: relative;
 	z-index: 4;
@@ -38,6 +38,11 @@
 		flex-wrap: wrap;
 		column-gap: rem(20);
 		row-gap: rem(10);
+		&._icon-phone {
+			span {
+				font-weight: 800;
+			}
+		}
 		span {
 			align-self: center;
 		}

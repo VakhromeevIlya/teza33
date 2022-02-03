@@ -47,6 +47,8 @@ $subtitleAbout: #575757;
 $colorFilterProjects: #dcdcdc;
 $bgColorFilterProjects: #fafafa;
 $swiperLazyBorder: #ebebeb;
+$bgBodyMenu: rgba(0, 0, 0, 0.9);
+$bgMenuPhones: #363636;
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
 $minWidth: 320;
@@ -125,6 +127,9 @@ body {
 			margin: 0 auto;
 		}
 		@if ($containerPadding>0) {
+			@media (min-width: $mobile) {
+				padding: 0 rem(math.div($containerPadding * 2, 2));
+			}
 			padding: 0 rem(math.div($containerPadding, 2));
 		}
 	}

@@ -10,9 +10,12 @@
 	line-height: math.div(62, 60);
 }
 .up-block {
-	@include adaptiveValue("padding-top", 205, 165, $containerWidth, 992, 1);
+	@include adaptiveValue("padding-top", 205, 165, $containerWidth, 1100, 1);
+	@media (max-width: em(1100)) {
+		padding-top: rem(120);
+	}
 	@media (max-width: $mobile) {
-		padding-top: rem(85);
+		padding-top: rem(100);
 	}
 }
 ._dots {
@@ -64,7 +67,7 @@
 ._no-padding-top {
 	padding-top: 0 !important;
 }
-._mail {
+a._mail {
 	color: $linkColor;
 	@media (any-hover: hover) {
 		&:hover {
@@ -247,7 +250,7 @@
 		display: grid;
 		grid-template-columns: 1fr percent(560, 1140);
 		@include adaptiveValue("column-gap", 90, 20, $containerWidth, 992, 1);
-		@media (max-width: em(885)) {
+		@media (max-width: em(1100)) {
 			grid-template-columns: 1fr;
 			row-gap: rem(20);
 		}
@@ -337,7 +340,7 @@
 		&:not(:last-child) {
 			margin-right: rem(30);
 		}
-		@media (max-width: em(885)) {
+		@media (max-width: em(1100)) {
 			height: 100%;
 		}
 	}
@@ -349,6 +352,9 @@
 		gap: rem(30);
 		@media (max-width: $tablet) {
 			gap: rem(15);
+		}
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: 1fr 1fr;
 		}
 	}
 
@@ -364,6 +370,10 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			@media (max-width: $mobileSmall) {
+				padding: rem(10);
+				object-fit: contain;
+			}
 		}
 	}
 }
@@ -421,7 +431,7 @@
 	&__table {
 		display: flex;
 		flex-direction: column;
-		gap: rem(8);
+		gap: rem(10);
 	}
 
 	&__item {
@@ -434,12 +444,12 @@
 	&__title {
 		font-weight: 700;
 		color: black;
-		line-height: 110%;
+		line-height: 190%;
 		flex: 1 1 auto;
 	}
 
 	&__value {
-		line-height: 110%;
+		line-height: 190%;
 		text-align: right;
 		color: $textTableValue;
 	}

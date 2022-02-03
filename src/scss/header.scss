@@ -1,30 +1,70 @@
 //====================================================================================================
+@keyframes slideInDown {
+	0% {
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+	100% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
 .header {
-	@include adaptiveValue("padding-top", 35, 10, $containerWidth, 992, 1);
 	@include adaptiveValue("padding-bottom", 15, 0, $containerWidth, 992, 1);
-	position: fixed;
+	padding-top: rem(20);
+	@media (min-width: $mobile) {
+		padding-top: rem(30);
+	}
+	position: absolute;
 	width: 100%;
 	top: 0;
 	left: 0;
 	z-index: 100;
 	transition: padding-top 0.3s ease;
+	@media (max-width: em(1100)) and(min-width:$mobile) {
+		padding-bottom: rem(30);
+	}
+	@media (max-width: $mobile) {
+		padding-bottom: rem(20);
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: $bgHeader;
+		z-index: 100;
+		opacity: 0;
+		transition: all 0.3s ease 0s;
+		.menu-open & {
+			opacity: 1;
+			border-bottom: rem(1) solid rgba(255, 255, 255, 0.16);
+		}
+	}
 	&._header-scroll {
 		background-color: $bgHeader;
-		padding-top: rem(10);
-		@media (min-width: $mobile) {
+		position: fixed;
+		top: 0;
+		animation: slideInDown 0.8s linear forwards;
+		@media (min-width: em(1100)) {
 			padding-bottom: rem(0);
 		}
 		.header__shell {
-			@media (min-width: $mobile) {
+			@media (min-width: em(1100)) {
 				row-gap: rem(20);
 			}
 		}
 	}
 	@media (max-width: $mobile) {
-		padding-bottom: rem(10);
+		padding-bottom: rem(20);
 	}
 	.wrapper:not([data-main-page]) & {
 		background: $bgHeader;
+		@media (max-width: $mobile) {
+			background: $bgBodyMenu;
+		}
 	}
 	//background-color: $bgHeader;
 	* {
@@ -34,16 +74,21 @@
 		display: flex;
 		flex-direction: column;
 		transition: row-gap 0.3s ease 0s;
-		@include adaptiveValue("row-gap", 55, 20, $containerWidth, 992, 1);
-		@media (max-width: $mobile) {
+		@include adaptiveValue("row-gap", 55, 20, $containerWidth, 1100, 1);
+		@media (max-width: em(1100)) {
 			row-gap: 0;
 		}
 	}
 	&__up {
 		display: flex;
 		align-items: center;
+		position: relative;
+		z-index: 100;
 	}
-
+	&__down {
+		position: relative;
+		z-index: 105;
+	}
 	&__logo {
 		position: relative;
 		z-index: 5;
@@ -61,7 +106,7 @@
 		display: flex;
 		align-items: center;
 		@include adaptiveValue("column-gap", 20, 10, $containerWidth, $minWidth, 1);
-		@media (max-width: $mobile) {
+		@media (max-width: em(1100)) {
 			@include adaptiveValue("padding-right", 20, 10, $containerWidth, $minWidth, 1);
 		}
 	}
@@ -75,8 +120,13 @@
 				opacity: 0.7;
 			}
 		}
-		@media (max-width: $mobileSmall) {
-			font-size: rem(28);
+		@media (max-width: em(1100)) {
+			visibility: hidden;
+			font-size: rem(20);
+			font-weight: 800;
+		}
+		.menu-open & {
+			visibility: visible;
 		}
 	}
 
@@ -84,51 +134,85 @@
 		&::before {
 			color: white;
 		}
-		@media (max-width: em(600)) {
-			span {
-				display: none;
-			}
+		@media (max-width: em(1100)) {
+			min-height: rem(56);
+			padding: rem(14) rem(25);
 		}
 	}
 }
 .menu {
 	&__body {
-		@media (max-width: $mobile) {
+		@media (max-width: em(1100)) {
 			position: fixed;
 			width: 100%;
-			height: 100%;
+			height: 100vh;
 			top: 0;
-			left: -100%;
+			left: 0;
+			overflow-y: auto;
+			overflow-x: hidden;
 			background: $bgHeader;
-			padding: 0 rem(15) rem(20) rem(15);
-			overflow: auto;
-			transition: all 0.3s ease 0s;
-			&::before {
-				content: "";
-				position: fixed;
-				z-index: 5;
-				top: 0;
-				left: -100%;
-				width: 100%;
-				height: rem(76);
-				background: $bgHeader;
-				transition: all 0.3s ease 0s;
+			display: flex;
+			flex-direction: column;
+			padding: 0 rem(30);
+			@media (max-width: $mobile) {
+				padding: 0 rem(15);
 			}
+
+			transition: all 0.3s ease 0s;
+			opacity: 0;
 			.menu-open & {
-				left: 0;
-				&::before {
-					left: 0;
-				}
+				opacity: 1;
 			}
 		}
 	}
-
+	&__phones {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: start;
+		gap: rem(20);
+		padding: rem(37) 0;
+		position: relative;
+		@media (min-width: em(1100)) {
+			display: none;
+		}
+		@media (max-width: $mobileSmall) {
+			display: grid;
+			justify-items: center;
+			text-align: center;
+		}
+		&::before {
+			content: "";
+			background: $bgMenuPhones;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100vw;
+			z-index: -1;
+		}
+		&::after {
+			content: "";
+			background: $bgMenuPhones;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 100vw;
+			z-index: -1;
+		}
+	}
 	&__list {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		padding-top: rem(86);
-		@media (min-width: $mobile) {
+		padding-top: rem(125);
+		@media (max-width: em(1100)) {
+			flex: 1 1 auto;
+		}
+		@media (max-width: em(1100)) and (min-width: $mobile) {
+			padding-top: rem(145);
+		}
+		@media (min-width: em(1100)) {
 			padding-top: 0;
 			row-gap: 0;
 			column-gap: rem(10);
@@ -141,8 +225,15 @@
 		color: $bgButtonOrange;
 		transition: transform 0.3s ease 0s;
 		transform: translateY(6%) rotate(0deg);
+
 		&::before {
 			font-size: em(11, 16);
+		}
+		@media (max-width: em(1100)) {
+			display: inline-flex;
+			flex: 0 0 rem(40);
+			width: rem(40);
+			justify-content: center;
 		}
 	}
 	&__item {
@@ -157,7 +248,7 @@
 		}
 		&_arrow-down {
 			&._active {
-				@media (min-width: $mobile) {
+				@media (min-width: em(1100)) {
 					.menu__sublist {
 						opacity: 1;
 						visibility: visible;
@@ -169,7 +260,7 @@
 					transform: translateY(6%) rotate(-180deg);
 				}
 			}
-			@media (any-hover: hover) and (min-width: $mobile) {
+			@media (any-hover: hover) and (min-width: em(1100)) {
 				&:hover {
 					.menu__sublist {
 						opacity: 1;
@@ -182,12 +273,13 @@
 					}
 				}
 			}
-			@media (max-width: $mobile) {
+			@media (max-width: em(1100)) {
 				flex-wrap: wrap;
+				justify-content: space-between;
 			}
 		}
-		@media (max-width: $mobile) {
-			font-size: rem(28);
+		@media (max-width: em(1100)) {
+			font-size: rem(17);
 			column-gap: rem(10);
 		}
 	}
@@ -195,6 +287,9 @@
 	&__link {
 		transition: opacity 0.3s ease 0s;
 		opacity: 1;
+		@media (max-width: em(1100)) {
+			font-weight: 700;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 0.7;
@@ -203,7 +298,7 @@
 	}
 
 	&__sublist {
-		@media (min-width: $mobile) {
+		@media (min-width: em(1100)) {
 			opacity: 0;
 			visibility: hidden;
 			position: absolute;
@@ -212,8 +307,7 @@
 			z-index: 3;
 		}
 		background: white;
-		padding: rem(15) 0 rem(15);
-		margin-top: rem(10);
+		padding: rem(20) 0 rem(20);
 		box-shadow: 0 rem(4) rem(20) rgba(0, 0, 0, 0.1);
 		border-radius: rem(6);
 		min-width: rem(375);
@@ -223,12 +317,10 @@
 		@media (max-width: $pc) {
 			margin-left: 0;
 		}
-		@media (max-width: $mobile) {
+		@media (max-width: em(1100)) {
 			flex: 1 1 100%;
 			min-width: 0;
-		}
-		@media (max-width: $mobileSmall) {
-			margin: rem(10) rem(-15) 0;
+			background: transparent;
 		}
 	}
 
@@ -237,8 +329,11 @@
 		transition: all 0.1s ease 0s;
 		border-left: rem(4) solid transparent;
 		cursor: pointer;
+		@media (max-width: em(1100)) {
+			padding: 0;
+		}
 		@media (max-width: $mobile) {
-			padding: rem(10) rem(15);
+			padding: 0;
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -252,10 +347,24 @@
 		line-height: 244.6%;
 		color: black;
 		padding-right: rem(15);
-		@media (max-width: $mobile) {
-			font-size: rem(22);
+		@media (max-width: em(1100)) {
 			padding-right: 0;
-			line-height: 100%;
+			font-size: rem(16);
+			line-height: 173.6%;
+			color: $fullscreenSubtitle;
+		}
+	}
+	&__icon {
+		flex: 0 0 rem(40);
+		height: rem(40);
+		width: rem(40);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: rem(2) solid $bgButtonOrange;
+		@media (min-width: em(1100)) {
+			display: none;
 		}
 	}
 }
@@ -266,12 +375,12 @@
 
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: em(1100)) {
 		display: block;
 		position: relative;
-		flex: 0 0 rem(30);
-		width: rem(30);
-		height: rem(18);
+		flex: 0 0 rem(19);
+		width: rem(19);
+		height: rem(14);
 		cursor: pointer;
 		z-index: 5;
 		span,
@@ -284,6 +393,7 @@
 			width: 100%;
 			height: rem(2);
 			background-color: white;
+			border-radius: rem(2);
 		}
 		&::before {
 			top: 0;
@@ -293,6 +403,7 @@
 		}
 		span {
 			top: calc(50% - rem(1));
+			border-radius: rem(2);
 		}
 		.menu-open & {
 			span {

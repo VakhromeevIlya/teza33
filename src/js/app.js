@@ -12,7 +12,7 @@
 */
 
 // Включить FLS (Full Logging System) (в работе)
-window['FLS'] = true;
+window["FLS"] = true;
 
 // Подключение основного файла стилей
 import "../scss/style.scss";
@@ -22,7 +22,7 @@ import "../scss/style.scss";
 import "./libs/dynamic_adapt.js";
 
 /* Форматирование чисел */
-import './libs/wNumb.min.js';
+import "./libs/wNumb.min.js";
 
 // Основные модули ========================================================================================================================================================================================================================================================
 import * as flsFunctions from "./files/functions.js";
@@ -37,7 +37,7 @@ flsFunctions.addTouchClass();
 /* Модуль для работы с меню (Бургер) */
 flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
-flsFunctions.fullVHfix();
+//flsFunctions.fullVHfix();
 
 /*
 Модуль работы со спойлерами
@@ -66,7 +66,6 @@ flsFunctions.spollers();
 Сниппет (HTML): pl
 */
 flsFunctions.initPopups();
-
 
 /*
 Модуль параллакса мышью
@@ -142,7 +141,7 @@ import "./files/sliders.js";
 Документация плагина: https://github.com/verlok/vanilla-lazyload
 Сниппет(HTML):
 */
-import './files/scroll/lazyload.js';
+import "./files/scroll/lazyload.js";
 
 // Функции работы скроллом ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 import * as flsScroll from "./files/scroll/scroll.js";

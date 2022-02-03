@@ -7,6 +7,7 @@
 		gap: rem(20);
 		@media (max-width: em(700)) {
 			grid-template-columns: 1fr;
+			gap: rem(30);
 		}
 	}
 
@@ -14,7 +15,7 @@
 		@media (max-width: em(700)) {
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: rem(15);
+			gap: rem(30);
 		}
 	}
 
@@ -38,22 +39,8 @@
 		&:not(:last-child) {
 			margin-bottom: rem(10);
 		}
-		&._spoller-active {
-			&::after {
-				transform: rotate(0deg);
-			}
-		}
 		span {
 			flex: 1 1 auto;
-		}
-		&::after {
-			content: "\e902";
-			@extend %ic;
-			transform: rotate(-90deg);
-			font-size: rem(12);
-			opacity: 0;
-			visibility: hidden;
-			transition: transform 0.3s ease 0s;
 		}
 		&::before {
 			color: $bgButtonOrange;
@@ -64,17 +51,12 @@
 			align-items: center;
 			justify-content: center;
 		}
-		@media (max-width: em(700)) {
-			&::after {
-				opacity: 1;
-				visibility: visible;
-			}
-		}
 	}
 
 	&__text {
 		font-size: rem(15);
 		line-height: 157.6%;
+		color: $greyText;
 	}
 
 	&__list {
@@ -90,24 +72,13 @@
 				&:not(:last-child) {
 					margin-bottom: rem(10);
 				}
-				.contacts__link {
-					flex: 1 1 40%;
-					@media (max-width: em(850)) {
-						flex: 1 1 100%;
-					}
-				}
-				.contacts__subtitle {
-					flex: 0 1 50%;
-					@media (max-width: em(850)) {
-						flex: 1 1 100%;
-					}
-				}
 			}
 		}
 	}
 
 	&__link {
 		transition: all 0.3s ease 0s;
+		color: $greyText;
 		@media (any-hover: hover) {
 			&:hover {
 				opacity: 0.7;

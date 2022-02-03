@@ -1,21 +1,25 @@
-<header class="header" data-lp>
+<header class="header" data-lp data-scroll="400">
 	<div class="header__container">
 		<div class="header__shell">
 			<div class="header__up">
 				<a href="home.html" aria-label="Вернуться на главную" class="header__logo"><img width="155" height="49"
 						data-src="@img/logo.svg" class="_lazy" alt="Логотип"></a>
 				<div class="header__phones">
-					<a data-da=".menu__body, 30, last" href="tel:88005553535" class="header__phone">8 (800) 555-35-35</a>
-					<button data-popup="#callback" aria-label="Перезвоните мне" type="button"
-						class="header__button button _icon-phone">
+					<a data-da=".menu__phones, 68.75, first" href="tel:88005553535" class="header__phone">8 (800)
+						555-35-35</a>
+
+					<button data-popup="#callback" data-da=".menu__phones, 68.75, last" aria-label="Перезвоните мне"
+						type="button" class="header__button button _icon-phone">
 						<span>Перезвоните мне</span>
 					</button>
 				</div>
-				<button type="button" aria-label="Открыть главное меню" class="icon-menu"><span></span></button>
+				<div class="menu__icon">
+					<button type="button" aria-label="Открыть главное меню" class="icon-menu "><span></span></button>
+				</div>
 			</div>
 			<div class="header__down">
 				<div class="header__menu menu">
-					<nav class="menu__body" data-spollers="48">
+					<nav class="menu__body" data-spollers="68.75">
 						<ul class="menu__list">
 							<li class="menu__item menu__item_arrow-down">
 								<a href="services.html" class="menu__link">Услуги</a>
@@ -39,6 +43,9 @@
 								<a href="calculator.html" class="menu__link">Калькулятор</a>
 							</li>
 						</ul>
+						<div class="menu__phones">
+
+						</div>
 					</nav>
 				</div>
 			</div>

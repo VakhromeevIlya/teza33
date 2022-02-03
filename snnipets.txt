@@ -84,6 +84,22 @@
 		],
 		"description": "Добавляет объект с картинкой и классом IBG"
 	},
+	"Add picture Swiper": {
+		"scope": "html",
+		"prefix": "pics",
+		"body": [
+			"<picture>\n\t<source class=\"swiper-lazy\" data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"swiper-lazy\" data-src=\"@img$1\" alt=\"Картинка\">\n</picture>"
+		],
+		"description": "swiper lazy"
+	},
+	"Add picture Lazy": {
+		"scope": "html",
+		"prefix": "picl",
+		"body": [
+			"<picture>\n\t<source data-srcset=\"@img$1\" type=\"image/webp\">\n\t<img class=\"_lazy\" data-src=\"@img$1\" alt=\"Картинка\">\n</picture>"
+		],
+		"description": "swiper lazy"
+	},
 	"Add Link with image IBG": {
 		"scope": "html",
 		"prefix": "ibga",

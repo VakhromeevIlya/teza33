@@ -45,14 +45,23 @@
 			margin-right: rem(0);
 		}
 	}
+
 	&__agreement {
 		font-size: rem(13);
 		line-height: 138.6%;
 		color: rgba(188, 188, 188, 0.63);
-		@media (any-hover: hover) {
-			&:hover {
-				text-decoration: underline;
-			}
+		margin-left: rem(-80);
+		margin-right: rem(-80);
+		@media (max-width: $mobileSmall) {
+			margin-left: rem(-60);
+			margin-right: rem(-60);
+		}
+		@media (max-width: em(410)) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		a {
+			text-decoration: underline;
 		}
 	}
 }
