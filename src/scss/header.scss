@@ -87,7 +87,9 @@
 	}
 	&__down {
 		position: relative;
-		z-index: 105;
+		@media (min-width: em(1100)) {
+			z-index: 100;
+		}
 	}
 	&__logo {
 		position: relative;
@@ -242,6 +244,7 @@
 		align-items: center;
 		column-gap: rem(7);
 		padding-bottom: rem(20);
+		z-index: 5;
 		cursor: pointer;
 		&::before {
 			color: $bgButtonOrange;
